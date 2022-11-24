@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "316765245918",
+    "project_id": "tourbiene-50741",
+    "storage_bucket": "tourbiene-50741.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316765245918:android:f3eb78a2a1fe1a1eef0d4f",
+        "android_client_info": {
+          "package_name": "com.example.tourbiene"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316765245918-sgt6c7fcrjdscgcg1nnijma31dlngcqt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tourbiene",
+            "certificate_hash": "3e6734d9d28ddae987894ec3d2c220316247879a"
+          }
+        },
+        {
+          "client_id": "316765245918-8ir4576bf810fregphk4bagll9ordos3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4TtEeFz8r01s8AwygQybqxNDwILJz4jY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316765245918-8ir4576bf810fregphk4bagll9ordos3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
