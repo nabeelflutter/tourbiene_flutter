@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Modal> postList = [];
+    //  List<Modal> postList = [];
 
     var imageUrl =
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDNTXJUKD5fRXQzYWZE3eSCkihN41OOu4PAg&usqp=CAU';
@@ -41,89 +41,90 @@ class HomePage extends StatelessWidget {
       'Categories',
       'Saved',
     ];
-    Future<Modal1> getSamsingPostApi() async {
-      final response = await http
-          .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/media/170'));
-      //var data = jsonDecode(response.body.toString());
-      if (response.statusCode == 200) {
-        // for (Map<String, dynamic> i in data) {
-        //   postList.add(Modal1.fromJson(i));
-        // }
-        // return postList;
-        return Modal1.fromJson(jsonDecode(response.body));
-      } else {
-        return Modal1.fromJson(jsonDecode(response.body));
-      }
-    }
+    // Future<Modal1> getSamsingPostApi() async {
+    //   final response = await http
+    //       .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/media/170'));
+    //   //var data = jsonDecode(response.body.toString());
+    //   if (response.statusCode == 200) {
+    //     // for (Map<String, dynamic> i in data) {
+    //     //   postList.add(Modal1.fromJson(i));
+    //     // }
+    //     // return postList;
+    //     return Modal1.fromJson(jsonDecode(response.body));
+    //   } else {
+    //     return Modal1.fromJson(jsonDecode(response.body));
+    //   }
+    // }
 
-    Future<Modal3> getHuvavyPostApi() async {
-      final response = await http
-          .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/media/612'));
+    // Future<Modal3> getHuvavyPostApi() async {
+    //   final response = await http
+    //       .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/media/612'));
 
-      if (response.statusCode == 200) {
-        return Modal3.fromJson(jsonDecode(response.body));
-      } else {
-        return Modal3.fromJson(jsonDecode(response.body));
-      }
-    }
+    //   if (response.statusCode == 200) {
+    //     return Modal3.fromJson(jsonDecode(response.body));
+    //   } else {
+    //     return Modal3.fromJson(jsonDecode(response.body));
+    //   }
+    // }
 
-    Future<Modal6> getModal6PostApi() async {
-      final response = await http
-          .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/media/255'));
+    // Future<Modal6> getModal6PostApi() async {
+    //   final response = await http
+    //       .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/media/255'));
 
-      if (response.statusCode == 200) {
-        return Modal6.fromJson(jsonDecode(response.body));
-      } else {
-        return Modal6.fromJson(jsonDecode(response.body));
-      }
-    }
+    //   if (response.statusCode == 200) {
+    //     return Modal6.fromJson(jsonDecode(response.body));
+    //   } else {
+    //     return Modal6.fromJson(jsonDecode(response.body));
+    //   }
+    // }
 
-    Future<Modal2> getRockShipPostApi() async {
-      final response = await http
-          .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/media/304'));
+    // Future<Modal2> getRockShipPostApi() async {
+    //   final response = await http
+    //       .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/media/304'));
 
-      if (response.statusCode == 200) {
-        return Modal2.fromJson(jsonDecode(response.body));
-      } else {
-        return Modal2.fromJson(jsonDecode(response.body));
-      }
-    }
+    //   if (response.statusCode == 200) {
+    //     return Modal2.fromJson(jsonDecode(response.body));
+    //   } else {
+    //     return Modal2.fromJson(jsonDecode(response.body));
+    //   }
+    // }
 
-    Future<Modal4> getModal4PostApi() async {
-      final response = await http
-          .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/media/626'));
+    // Future<Modal4> getModal4PostApi() async {
+    //   final response = await http
+    //       .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/media/626'));
 
-      if (response.statusCode == 200) {
-        return Modal4.fromJson(jsonDecode(response.body));
-      } else {
-        return Modal4.fromJson(jsonDecode(response.body));
-      }
-    }
+    //   if (response.statusCode == 200) {
+    //     return Modal4.fromJson(jsonDecode(response.body));
+    //   } else {
+    //     return Modal4.fromJson(jsonDecode(response.body));
+    //   }
+    // }
 
-    Future<Modal5> getModal5PostApi() async {
-      final response = await http
-          .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/media/624'));
+    // Future<Modal5> getModal5PostApi() async {
+    //   final response = await http
+    //       .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/media/624'));
 
-      if (response.statusCode == 200) {
-        return Modal5.fromJson(jsonDecode(response.body));
-      } else {
-        return Modal5.fromJson(jsonDecode(response.body));
-      }
-    }
+    //   if (response.statusCode == 200) {
+    //     return Modal5.fromJson(jsonDecode(response.body));
+    //   } else {
+    //     return Modal5.fromJson(jsonDecode(response.body));
+    //   }
+    // }
 
-    Future<List<Modal>> getPostApi() async {
-      final response = await http
-          .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/posts'));
-      var data = jsonDecode(response.body.toString());
-      if (response.statusCode == 200) {
-        for (Map<String, dynamic> i in data) {
-          postList.add(Modal.fromJson(i));
-        }
-        return postList;
-      } else {
-        return postList;
-      }
-    }
+    // Future getPostApi() async {
+
+    //   // final response = await http
+    //   //     .get(Uri.parse('https://tourbiene.com/wp-json/wp/v2/posts'));
+    //   // var data = jsonDecode(response.body.toString());
+    //   // if (response.statusCode == 200) {
+    //   //   for (Map<String, dynamic> i in data) {
+    //   //     postList.add(Modal.fromJson(i));
+    //   //   }
+    //   //   return postList;
+    //   // } else {
+    //   //   return postList;
+    //   // }
+    // }
 
     List<Widget> iconList = [
       const Icon(
@@ -247,48 +248,58 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Container(
-            height: 200,
-            child: FutureBuilder(
-              future: getPostApi(),
-              builder: (context, AsyncSnapshot<List<Modal>> snapshot) {
-                if (!snapshot.hasData) {
-                  return Center(
-                      child: Column(
-                    children: [
-                      Shimmer.fromColors(
-                          baseColor: Colors.grey.shade700,
-                          highlightColor: Colors.grey.shade100,
-                          child: ListTile(
-                              subtitle: Container(
-                                  height: 10, color: Colors.amber.shade100),
-                              title: Container(
-                                  height: 20, color: Colors.amber.shade100))),
-                      Shimmer.fromColors(
-                          baseColor: Colors.grey.shade700,
-                          highlightColor: Colors.grey.shade100,
-                          child: ListTile(
-                              subtitle: Container(
-                                  height: 10, color: Colors.amber.shade100),
-                              title: Container(
-                                  height: 20, color: Colors.amber.shade100))),
-                    ],
-                  ));
-                } else {
-                  return ListView.builder(
-                    itemCount: postList.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(postList[index].title!.rendered.toString(),
-                            style: const TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.bold)),
-                      );
-                    },
-                  );
-                }
-              },
-            ),
-          ),
+              height: 140,
+              child: ListView.builder(
+                itemCount: 5,
+                itemBuilder: (context, index) =>
+                    const Padding(
+                      padding: EdgeInsets.only(left: 8,right: 8,top: 5),
+                      child: Center(child: Text("String")),
+                    ),
+              )
+
+              // FutureBuilder(
+              //   future: getPostApi(),
+              //   builder: (context, AsyncSnapshot snapshot) {
+              //     if (!snapshot.hasData) {
+              //       return Center(
+              //           child: Column(
+              //         children: [
+              //           Shimmer.fromColors(
+              //               baseColor: Colors.grey.shade700,
+              //               highlightColor: Colors.grey.shade100,
+              //               child: ListTile(
+              //                   subtitle: Container(
+              //                       height: 10, color: Colors.amber.shade100),
+              //                   title: Container(
+              //                       height: 20, color: Colors.amber.shade100))),
+              //           Shimmer.fromColors(
+              //               baseColor: Colors.grey.shade700,
+              //               highlightColor: Colors.grey.shade100,
+              //               child: ListTile(
+              //                   subtitle: Container(
+              //                       height: 10, color: Colors.amber.shade100),
+              //                   title: Container(
+              //                       height: 20, color: Colors.amber.shade100))),
+              //         ],
+              //       ));
+              //     } else {
+              //       return ListView.builder(
+              //         itemCount: 5,
+              //         itemBuilder: (context, index) {
+              //           return const Padding(
+              //             padding:  EdgeInsets.all(8.0),
+              //             child: Text("Sajjad",
+              //               // postList[index].title!.rendered.toString(),
+              //                 style: TextStyle(
+              //                     fontSize: 14, fontWeight: FontWeight.bold)),
+              //           );
+              //         },
+              //       );
+              //     }
+              //   },
+              // ),
+              ),
           const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text(
@@ -307,11 +318,53 @@ class HomePage extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return FutureBuilder<Modal1>(
-                  future: getSamsingPostApi(),
+                  // future: getSamsingPostApi(),
                   builder: (context, AsyncSnapshot<Modal1> snapshot) {
                     if (!snapshot.hasData) {
-                      return const Center(
-                        child: Text('Loading'),
+                      return Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Container(
+                          height: 250,
+                          width: 150,
+                          // color: Colors.white,
+                          child: Column(
+                            children: [
+                              Container(
+                                
+                                height: 170,
+                                width: 160,
+                              color: Colors.white,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Card(
+                                      //elevation: 10,
+                                      // color: Colors.white,
+                                      child: Image.network(
+                                         "https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg",
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: RichText(
+                                  text: const TextSpan(
+                                      text: "image",
+                                      style: TextStyle(
+                                          color: Colors.black, fontSize: 16),
+                                      children: <TextSpan>[
+                                        TextSpan(
+                                          text: ' Rs.5000',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                        )
+                                      ]),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
                       );
                     } else {
                       return Padding(
@@ -330,8 +383,7 @@ class HomePage extends StatelessWidget {
                                     //elevation: 10,
                                     // color: Colors.white,
                                     child: Image.network(
-                                        snapshot.data!.guid!.rendered
-                                            .toString(),
+                                       "https://imagekit.io/blog/image-optimization-its-importance/",
                                         fit: BoxFit.cover)),
                               ),
                               Padding(
@@ -382,424 +434,569 @@ class HomePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    FutureBuilder<Modal1>(
-                      future: getSamsingPostApi(),
-                      builder: (context, snapshot) => InkWell(
-                        onTap: () {
-                          if (!snapshot.hasData) {
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(const SnackBar(
-                              content:
-                                  Text('Please wait your data is Loading...'),
-                              backgroundColor: Colors.purple,
-                            ));
-                          } else {
+                    Column(
+                      children:  [
+                        GestureDetector(
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => RockShip(
-                                    image: snapshot.data!.sourceUrl.toString(),
-                                    descroption: snapshot
-                                        .data!.description!.rendered
-                                        .toString(),
-                                  ),
-                                ));
-                          }
-                        },
-                        child: Container(
-                          color: Colors.white,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                  height: 100,
-                                  width: 100,
-                                  decoration: const BoxDecoration(
-                                      color: Color.fromARGB(255, 240, 205, 200),
-                                      shape: BoxShape.circle),
-                                  child: imageUrl.isEmpty
-                                      ? Shimmer.fromColors(
-                                          baseColor: Colors.grey.shade200,
-                                          highlightColor: Colors.grey.shade700,
-                                          child: const CircleAvatar(
-                                            backgroundColor: Colors.white,
-                                          ))
-                                      : FutureBuilder<Modal1>(
-                                          future: getSamsingPostApi(),
-                                          builder: (context, snapshot) =>
-                                              !snapshot.hasData
-                                                  ? const SizedBox()
-                                                  : CircleAvatar(
-                                                      backgroundImage:
-                                                          NetworkImage(
-                                                        snapshot.data!.sourceUrl
-                                                            .toString(),
-                                                      ),
-                                                    ),
-                                        )),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              const Text(
-                                'Samsung',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.normal),
-                              )
-                            ],
-                          ),
+                                    image:"https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg",
+                                    descroption:"image"
+                                        
+                                  )));
+                          },
+                          child: const CircleAvatar(
+                            radius: 50,
+                                                            backgroundImage:
+                                                                NetworkImage(
+                                                              "https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg"
+                                                            ),
+                                                          ),
                         ),
-                      ),
+                                                        const Text("name")
+                      ],
                     ),
-                    FutureBuilder<Modal2>(
-                      future: getRockShipPostApi(),
-                      builder: (context, snapshot) => InkWell(
-                        onTap: () {
-                          if (!snapshot.hasData) {
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(const SnackBar(
-                              content:
-                                  Text('Please wait your data is Loading...'),
-                              backgroundColor: Colors.purple,
-                            ));
-                          } else {
+                    // FutureBuilder<Modal1>(
+                    //   // future: getSamsingPostApi(),
+                    //   builder: (context, snapshot) => InkWell(
+                    //     onTap: () {
+                    //       if (!snapshot.hasData) {
+                    //         ScaffoldMessenger.of(context)
+                    //             .showSnackBar(const SnackBar(
+                    //           content:
+                    //               Text('Please wait your data is Loading...'),
+                    //           backgroundColor: Colors.purple,
+                    //         ));
+                    //       } else {
+                    //         Navigator.push(
+                    //             context,
+                    //             MaterialPageRoute(
+                    //               builder: (context) => RockShip(
+                    //                 image: "https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg", descroption: 'image',
+                    //               ),
+                    //             ));
+                    //       }
+                    //     },
+                    //     child: Container(
+                    //       color: Colors.white,
+                    //       child: Column(
+                    //         mainAxisAlignment: MainAxisAlignment.center,
+                    //         children: [
+                    //           Container(
+                    //               height: 100,
+                    //               width: 100,
+                    //               decoration: const BoxDecoration(
+                    //                   color: Color.fromARGB(255, 240, 205, 200),
+                    //                   shape: BoxShape.circle),
+                    //               child: CircleAvatar(
+                    //                                   backgroundImage:
+                    //                                       NetworkImage(
+                    //                                     "https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg"
+                    //                                   ),
+                    //                                 )
+                    //                   // ? Shimmer.fromColors(
+                    //                   //     baseColor: Colors.grey.shade200,
+                    //                   //     highlightColor: Colors.grey.shade700,
+                    //                   //     child: const CircleAvatar(
+                    //                   //       backgroundColor: Colors.white,
+                    //                   //     ))
+                    //                   : FutureBuilder<Modal1>(
+                    //                       // future: getSamsingPostApi(),
+                    //                       builder: (context, snapshot) =>
+                    //                           !snapshot.hasData
+                    //                               ? const SizedBox()
+                    //                               : const CircleAvatar(
+                    //                                   backgroundImage:
+                    //                                       NetworkImage(
+                    //                                     "https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg"
+                    //                                   ),
+                    //                                 ),
+                    //                     )),
+                    //           const SizedBox(
+                    //             height: 8,
+                    //           ),
+                    //           const Text(
+                    //             'Samsung',
+                    //             style: TextStyle(
+                    //                 fontSize: 15,
+                    //                 fontWeight: FontWeight.normal),
+                    //           )
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // FutureBuilder<Modal2>(
+                    //   // future: getRockShipPostApi(),
+                    //   builder: (context, snapshot) => InkWell(
+                    //     onTap: () {
+                    //       if (!snapshot.hasData) {
+                    //         ScaffoldMessenger.of(context)
+                    //             .showSnackBar(const SnackBar(
+                    //           content:
+                    //               Text('Please wait your data is Loading...'),
+                    //           backgroundColor: Colors.purple,
+                    //         ));
+                    //       } else {
+                    //         Navigator.push(
+                    //             context,
+                    //             MaterialPageRoute(
+                    //               builder: (context) => RockShip(
+                    //                 image: snapshot.data!.sourceUrl.toString(),
+                    //                 descroption: snapshot
+                    //                     .data!.description.rendered
+                    //                     .toString(),
+                    //               ),
+                    //             ));
+                    //       }
+                    //     },
+                    //     child: Container(
+                    //       color: Colors.white,
+                    //       child: Column(
+                    //         mainAxisAlignment: MainAxisAlignment.center,
+                    //         children: [
+                    //           Container(
+                    //               height: 100,
+                    //               width: 100,
+                    //               decoration: const BoxDecoration(
+                    //                   color: Color.fromARGB(255, 240, 205, 200),
+                    //                   shape: BoxShape.circle),
+                    //               child: imageUrl.isEmpty
+                    //                   ? Shimmer.fromColors(
+                    //                       baseColor: Colors.grey.shade200,
+                    //                       highlightColor: Colors.grey.shade700,
+                    //                       child: const CircleAvatar(
+                    //                         backgroundColor: Colors.white,
+                    //                       ))
+                    //                   : FutureBuilder<Modal2>(
+                    //                       // future: getRockShipPostApi(),
+                    //                       builder: (context, snapshot) =>
+                    //                           !snapshot.hasData
+                    //                               ? const SizedBox()
+                    //                               : CircleAvatar(
+                    //                                   backgroundImage:
+                    //                                       NetworkImage(
+                    //                                     snapshot.data!.sourceUrl
+                    //                                         .toString(),
+                    //                                   ),
+                    //                                 ),
+                    //                     )),
+                    //           const SizedBox(
+                    //             height: 8,
+                    //           ),
+                    //           const Text(
+                    //             'RockShip',
+                    //             style: TextStyle(
+                    //                 fontSize: 15,
+                    //                 fontWeight: FontWeight.normal),
+                    //           )
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                     Column(
+                      children:  [
+                        GestureDetector(
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => RockShip(
-                                    image: snapshot.data!.sourceUrl.toString(),
-                                    descroption: snapshot
-                                        .data!.description.rendered
-                                        .toString(),
-                                  ),
-                                ));
-                          }
-                        },
-                        child: Container(
-                          color: Colors.white,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                  height: 100,
-                                  width: 100,
-                                  decoration: const BoxDecoration(
-                                      color: Color.fromARGB(255, 240, 205, 200),
-                                      shape: BoxShape.circle),
-                                  child: imageUrl.isEmpty
-                                      ? Shimmer.fromColors(
-                                          baseColor: Colors.grey.shade200,
-                                          highlightColor: Colors.grey.shade700,
-                                          child: const CircleAvatar(
-                                            backgroundColor: Colors.white,
-                                          ))
-                                      : FutureBuilder<Modal2>(
-                                          future: getRockShipPostApi(),
-                                          builder: (context, snapshot) =>
-                                              !snapshot.hasData
-                                                  ? const SizedBox()
-                                                  : CircleAvatar(
-                                                      backgroundImage:
-                                                          NetworkImage(
-                                                        snapshot.data!.sourceUrl
-                                                            .toString(),
-                                                      ),
-                                                    ),
-                                        )),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              const Text(
-                                'RockShip',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.normal),
-                              )
-                            ],
-                          ),
+                                    image:"https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg",
+                                    descroption:"image"
+                                        
+                                  )));
+                          },
+                          child: const CircleAvatar(
+                            radius: 50,
+                                                            backgroundImage:
+                                                                NetworkImage(
+                                                              "https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg"
+                                                            ),
+                                                          ),
                         ),
-                      ),
+                                                        const Text("name")
+                      ],
                     ),
-                    FutureBuilder<Modal3>(
-                      future: getHuvavyPostApi(),
-                      builder: (context, snapshot) => InkWell(
-                        onTap: () {
-                          if (!snapshot.hasData) {
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(const SnackBar(
-                              content:
-                                  Text('Please wait your data is Loading...'),
-                              backgroundColor: Colors.purple,
-                            ));
-                          } else {
+                    // FutureBuilder<Modal3>(
+                    //   // future: getHuvavyPostApi(),
+                    //   builder: (context, snapshot) => InkWell(
+                    //     onTap: () {
+                    //       if (!snapshot.hasData) {
+                    //         ScaffoldMessenger.of(context)
+                    //             .showSnackBar(const SnackBar(
+                    //           content:
+                    //               Text('Please wait your data is Loading...'),
+                    //           backgroundColor: Colors.purple,
+                    //         ));
+                    //       } else {
+                    //         Navigator.push(
+                    //             context,
+                    //             MaterialPageRoute(
+                    //               builder: (context) => RockShip(
+                    //                 image: snapshot.data!.sourceUrl.toString(),
+                    //                 descroption: snapshot
+                    //                     .data!.description.rendered
+                    //                     .toString(),
+                    //               ),
+                    //             ));
+                    //       }
+                    //     },
+                    //     child: Container(
+                    //       color: Colors.white,
+                    //       child: Column(
+                    //         mainAxisAlignment: MainAxisAlignment.center,
+                    //         children: [
+                    //           Container(
+                    //               height: 100,
+                    //               width: 100,
+                    //               decoration: const BoxDecoration(
+                    //                   color: Color.fromARGB(255, 240, 205, 200),
+                    //                   shape: BoxShape.circle),
+                    //               child: imageUrl.isEmpty
+                    //                   ? Shimmer.fromColors(
+                    //                       baseColor: Colors.grey.shade200,
+                    //                       highlightColor: Colors.grey.shade700,
+                    //                       child: const CircleAvatar(
+                    //                         backgroundColor: Colors.white,
+                    //                       ))
+                    //                   : FutureBuilder<Modal3>(
+                    //                       // future: getHuvavyPostApi(),
+                    //                       builder: (context, snapshot) =>
+                    //                           !snapshot.hasData
+                    //                               ? const SizedBox()
+                    //                               : CircleAvatar(
+                    //                                   backgroundImage:
+                    //                                       NetworkImage(
+                    //                                     snapshot.data!.sourceUrl
+                    //                                         .toString(),
+                    //                                   ),
+                    //                                 ),
+                    //                     )),
+                    //           const SizedBox(
+                    //             height: 8,
+                    //           ),
+                    //           const Text(
+                    //             'Huawea',
+                    //             style: TextStyle(
+                    //                 fontSize: 15,
+                    //                 fontWeight: FontWeight.normal),
+                    //           )
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                     Column(
+                      children:  [
+                        GestureDetector(
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => RockShip(
-                                    image: snapshot.data!.sourceUrl.toString(),
-                                    descroption: snapshot
-                                        .data!.description.rendered
-                                        .toString(),
-                                  ),
-                                ));
-                          }
-                        },
-                        child: Container(
-                          color: Colors.white,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                  height: 100,
-                                  width: 100,
-                                  decoration: const BoxDecoration(
-                                      color: Color.fromARGB(255, 240, 205, 200),
-                                      shape: BoxShape.circle),
-                                  child: imageUrl.isEmpty
-                                      ? Shimmer.fromColors(
-                                          baseColor: Colors.grey.shade200,
-                                          highlightColor: Colors.grey.shade700,
-                                          child: const CircleAvatar(
-                                            backgroundColor: Colors.white,
-                                          ))
-                                      : FutureBuilder<Modal3>(
-                                          future: getHuvavyPostApi(),
-                                          builder: (context, snapshot) =>
-                                              !snapshot.hasData
-                                                  ? const SizedBox()
-                                                  : CircleAvatar(
-                                                      backgroundImage:
-                                                          NetworkImage(
-                                                        snapshot.data!.sourceUrl
-                                                            .toString(),
-                                                      ),
-                                                    ),
-                                        )),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              const Text(
-                                'Huawea',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.normal),
-                              )
-                            ],
-                          ),
+                                    image:"https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg",
+                                    descroption:"image"
+                                        
+                                  )));
+                          },
+                          child: const CircleAvatar(
+                            radius: 50,
+                                                            backgroundImage:
+                                                                NetworkImage(
+                                                              "https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg"
+                                                            ),
+                                                          ),
                         ),
-                      ),
+                                                        const Text("name")
+                      ],
                     ),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    FutureBuilder<Modal4>(
-                      future: getModal4PostApi(),
-                      builder: (context, snapshot) => InkWell(
-                        onTap: () {
-                          if (!snapshot.hasData) {
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(const SnackBar(
-                              content:
-                                  Text('Please wait your data is Loading...'),
-                              backgroundColor: Colors.purple,
-                            ));
-                          } else {
+                    // FutureBuilder<Modal4>(
+                    //   // future: getModal4PostApi(),
+                    //   builder: (context, snapshot) => InkWell(
+                    //     onTap: () {
+                    //       if (!snapshot.hasData) {
+                    //         ScaffoldMessenger.of(context)
+                    //             .showSnackBar(const SnackBar(
+                    //           content:
+                    //               Text('Please wait your data is Loading...'),
+                    //           backgroundColor: Colors.purple,
+                    //         ));
+                    //       } else {
+                    //         Navigator.push(
+                    //             context,
+                    //             MaterialPageRoute(
+                    //               builder: (context) => RockShip(
+                    //                 image: snapshot.data!.sourceUrl.toString(),
+                    //                 descroption: snapshot
+                    //                     .data!.description.rendered
+                    //                     .toString(),
+                    //               ),
+                    //             ));
+                    //       }
+                    //     },
+                    //     child: Container(
+                    //       color: Colors.white,
+                    //       child: Column(
+                    //         mainAxisAlignment: MainAxisAlignment.center,
+                    //         children: [
+                    //           Container(
+                    //               height: 100,
+                    //               width: 100,
+                    //               decoration: const BoxDecoration(
+                    //                   color: Color.fromARGB(255, 240, 205, 200),
+                    //                   shape: BoxShape.circle),
+                    //               child: imageUrl.isEmpty
+                    //                   ? Shimmer.fromColors(
+                    //                       baseColor: Colors.grey.shade200,
+                    //                       highlightColor: Colors.grey.shade700,
+                    //                       child: const CircleAvatar(
+                    //                         backgroundColor: Colors.white,
+                    //                       ))
+                    //                   : FutureBuilder<Modal4>(
+                    //                       // future: getModal4PostApi(),
+                    //                       builder: (context, snapshot) =>
+                    //                           !snapshot.hasData
+                    //                               ? const SizedBox()
+                    //                               : CircleAvatar(
+                    //                                   backgroundImage:
+                    //                                       NetworkImage(
+                    //                                     snapshot.data!.sourceUrl
+                    //                                         .toString(),
+                    //                                   ),
+                    //                                 ),
+                    //                     )),
+                    //           const SizedBox(
+                    //             height: 8,
+                    //           ),
+                    //           const Text(
+                    //             'Xiaomi',
+                    //             style: TextStyle(
+                    //                 fontSize: 15,
+                    //                 fontWeight: FontWeight.normal),
+                    //           )
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                     Column(
+                      children:  [
+                        GestureDetector(
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => RockShip(
-                                    image: snapshot.data!.sourceUrl.toString(),
-                                    descroption: snapshot
-                                        .data!.description.rendered
-                                        .toString(),
-                                  ),
-                                ));
-                          }
-                        },
-                        child: Container(
-                          color: Colors.white,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                  height: 100,
-                                  width: 100,
-                                  decoration: const BoxDecoration(
-                                      color: Color.fromARGB(255, 240, 205, 200),
-                                      shape: BoxShape.circle),
-                                  child: imageUrl.isEmpty
-                                      ? Shimmer.fromColors(
-                                          baseColor: Colors.grey.shade200,
-                                          highlightColor: Colors.grey.shade700,
-                                          child: const CircleAvatar(
-                                            backgroundColor: Colors.white,
-                                          ))
-                                      : FutureBuilder<Modal4>(
-                                          future: getModal4PostApi(),
-                                          builder: (context, snapshot) =>
-                                              !snapshot.hasData
-                                                  ? const SizedBox()
-                                                  : CircleAvatar(
-                                                      backgroundImage:
-                                                          NetworkImage(
-                                                        snapshot.data!.sourceUrl
-                                                            .toString(),
-                                                      ),
-                                                    ),
-                                        )),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              const Text(
-                                'Xiaomi',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.normal),
-                              )
-                            ],
-                          ),
+                                    image:"https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg",
+                                    descroption:"image"
+                                        
+                                  )));
+                          },
+                          child: const CircleAvatar(
+                            radius: 50,
+                                                            backgroundImage:
+                                                                NetworkImage(
+                                                              "https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg"
+                                                            ),
+                                                          ),
                         ),
-                      ),
+                                                        const Text("name")
+                      ],
                     ),
-                    FutureBuilder<Modal5>(
-                      future: getModal5PostApi(),
-                      builder: (context, snapshot) => InkWell(
-                        onTap: () {
-                          if (!snapshot.hasData) {
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(const SnackBar(
-                              content:
-                                  Text('Please wait your data is Loading...'),
-                              backgroundColor: Colors.purple,
-                            ));
-                          } else {
+                    // FutureBuilder<Modal5>(
+                    //   // future: getModal5PostApi(),
+                    //   builder: (context, snapshot) => InkWell(
+                    //     onTap: () {
+                    //       if (!snapshot.hasData) {
+                    //         ScaffoldMessenger.of(context)
+                    //             .showSnackBar(const SnackBar(
+                    //           content:
+                    //               Text('Please wait your data is Loading...'),
+                    //           backgroundColor: Colors.purple,
+                    //         ));
+                    //       } else {
+                    //         Navigator.push(
+                    //             context,
+                    //             MaterialPageRoute(
+                    //               builder: (context) => RockShip(
+                    //                 image: snapshot.data!.sourceUrl.toString(),
+                    //                 descroption: snapshot
+                    //                     .data!.description.rendered
+                    //                     .toString(),
+                    //               ),
+                    //             ));
+                    //       }
+                    //     },
+                    //     child: Container(
+                    //       color: Colors.white,
+                    //       child: Column(
+                    //         mainAxisAlignment: MainAxisAlignment.center,
+                    //         children: [
+                    //           Container(
+                    //               height: 100,
+                    //               width: 100,
+                    //               decoration: const BoxDecoration(
+                    //                   color: Color.fromARGB(255, 240, 205, 200),
+                    //                   shape: BoxShape.circle),
+                    //               child: imageUrl.isEmpty
+                    //                   ? Shimmer.fromColors(
+                    //                       baseColor: Colors.grey.shade200,
+                    //                       highlightColor: Colors.grey.shade700,
+                    //                       child: const CircleAvatar(
+                    //                         backgroundColor: Colors.white,
+                    //                       ))
+                    //                   : FutureBuilder<Modal5>(
+                    //                       // future: getModal5PostApi(),
+                    //                       builder: (context, snapshot) =>
+                    //                           !snapshot.hasData
+                    //                               ? const SizedBox()
+                    //                               : CircleAvatar(
+                    //                                   backgroundImage:
+                    //                                       NetworkImage(
+                    //                                     snapshot.data!.sourceUrl
+                    //                                         .toString(),
+                    //                                   ),
+                    //                                 ),
+                    //                     )),
+                    //           const SizedBox(
+                    //             height: 8,
+                    //           ),
+                    //           const Text(
+                    //             'Vgologo',
+                    //             style: TextStyle(
+                    //                 fontSize: 15,
+                    //                 fontWeight: FontWeight.normal),
+                    //           )
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                     Column(
+                      children:  [
+                        GestureDetector(
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => RockShip(
-                                    image: snapshot.data!.sourceUrl.toString(),
-                                    descroption: snapshot
-                                        .data!.description.rendered
-                                        .toString(),
-                                  ),
-                                ));
-                          }
-                        },
-                        child: Container(
-                          color: Colors.white,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                  height: 100,
-                                  width: 100,
-                                  decoration: const BoxDecoration(
-                                      color: Color.fromARGB(255, 240, 205, 200),
-                                      shape: BoxShape.circle),
-                                  child: imageUrl.isEmpty
-                                      ? Shimmer.fromColors(
-                                          baseColor: Colors.grey.shade200,
-                                          highlightColor: Colors.grey.shade700,
-                                          child: const CircleAvatar(
-                                            backgroundColor: Colors.white,
-                                          ))
-                                      : FutureBuilder<Modal5>(
-                                          future: getModal5PostApi(),
-                                          builder: (context, snapshot) =>
-                                              !snapshot.hasData
-                                                  ? const SizedBox()
-                                                  : CircleAvatar(
-                                                      backgroundImage:
-                                                          NetworkImage(
-                                                        snapshot.data!.sourceUrl
-                                                            .toString(),
-                                                      ),
-                                                    ),
-                                        )),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              const Text(
-                                'Vgologo',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.normal),
-                              )
-                            ],
-                          ),
+                                    image:"https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg",
+                                    descroption:"image"
+                                        
+                                  )));
+                          },
+                          child: const CircleAvatar(
+                            radius: 50,
+                                                            backgroundImage:
+                                                                NetworkImage(
+                                                              "https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg"
+                                                            ),
+                                                          ),
                         ),
-                      ),
+                                                        const Text("name")
+                      ],
                     ),
-                    FutureBuilder<Modal6>(
-                      future: getModal6PostApi(),
-                      builder: (context, snapshot) => InkWell(
-                        onTap: () {
-                          if (!snapshot.hasData) {
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(const SnackBar(
-                              content:
-                                  Text('Please wait your data is Loading...'),
-                              backgroundColor: Colors.purple,
-                            ));
-                          } else {
+                    // FutureBuilder<Modal6>(
+                    //   // future: getModal6PostApi(),
+                    //   builder: (context, snapshot) => InkWell(
+                    //     onTap: () {
+                    //       if (!snapshot.hasData) {
+                    //         ScaffoldMessenger.of(context)
+                    //             .showSnackBar(const SnackBar(
+                    //           content:
+                    //               Text('Please wait your data is Loading...'),
+                    //           backgroundColor: Colors.purple,
+                    //         ));
+                    //       } else {
+                    //         Navigator.push(
+                    //             context,
+                    //             MaterialPageRoute(
+                    //               builder: (context) => RockShip(
+                    //                 image: snapshot.data!.sourceUrl.toString(),
+                    //                 descroption: snapshot
+                    //                     .data!.description.rendered
+                    //                     .toString(),
+                    //               ),
+                    //             ));
+                    //       }
+                    //     },
+                    //     child: Container(
+                    //       color: Colors.white,
+                    //       child: Column(
+                    //         mainAxisAlignment: MainAxisAlignment.center,
+                    //         children: [
+                    //           Container(
+                    //               height: 100,
+                    //               width: 100,
+                    //               decoration: const BoxDecoration(
+                    //                   color: Color.fromARGB(255, 240, 205, 200),
+                    //                   shape: BoxShape.circle),
+                    //               child: imageUrl.isEmpty
+                    //                   ? Shimmer.fromColors(
+                    //                       baseColor: Colors.grey.shade200,
+                    //                       highlightColor: Colors.grey.shade700,
+                    //                       child: const CircleAvatar(
+                    //                         backgroundColor: Colors.white,
+                    //                       ))
+                    //                   : FutureBuilder<Modal6>(
+                    //                       // future: getModal6PostApi(),
+                    //                       builder: (context, snapshot) =>
+                    //                           !snapshot.hasData
+                    //                               ? const SizedBox()
+                    //                               : CircleAvatar(
+                    //                                   backgroundImage:
+                    //                                       NetworkImage(
+                    //                                     snapshot.data!.sourceUrl
+                    //                                         .toString(),
+                    //                                   ),
+                    //                                 ),
+                    //                     )),
+                    //           const SizedBox(
+                    //             height: 8,
+                    //           ),
+                    //           const Text(
+                    //             'Gopro_hero7',
+                    //             style: TextStyle(
+                    //                 fontSize: 15,
+                    //                 fontWeight: FontWeight.normal),
+                    //           )
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                     Column(
+                      children:  [
+                        GestureDetector(
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => RockShip(
-                                    image: snapshot.data!.sourceUrl.toString(),
-                                    descroption: snapshot
-                                        .data!.description.rendered
-                                        .toString(),
-                                  ),
-                                ));
-                          }
-                        },
-                        child: Container(
-                          color: Colors.white,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                  height: 100,
-                                  width: 100,
-                                  decoration: const BoxDecoration(
-                                      color: Color.fromARGB(255, 240, 205, 200),
-                                      shape: BoxShape.circle),
-                                  child: imageUrl.isEmpty
-                                      ? Shimmer.fromColors(
-                                          baseColor: Colors.grey.shade200,
-                                          highlightColor: Colors.grey.shade700,
-                                          child: const CircleAvatar(
-                                            backgroundColor: Colors.white,
-                                          ))
-                                      : FutureBuilder<Modal6>(
-                                          future: getModal6PostApi(),
-                                          builder: (context, snapshot) =>
-                                              !snapshot.hasData
-                                                  ? const SizedBox()
-                                                  : CircleAvatar(
-                                                      backgroundImage:
-                                                          NetworkImage(
-                                                        snapshot.data!.sourceUrl
-                                                            .toString(),
-                                                      ),
-                                                    ),
-                                        )),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              const Text(
-                                'Gopro_hero7',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.normal),
-                              )
-                            ],
-                          ),
+                                    image:"https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg",
+                                    descroption:"image"
+                                        
+                                  )));
+                          },
+                          child: const CircleAvatar(
+                            radius: 50,
+                                                            backgroundImage:
+                                                                NetworkImage(
+                                                              "https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg"
+                                                            ),
+                                                          ),
                         ),
-                      ),
+                                                        const Text("name")
+                      ],
                     ),
                   ],
                 ),
@@ -827,11 +1024,52 @@ class HomePage extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return FutureBuilder<Modal1>(
-                  future: getSamsingPostApi(),
+                  // future: getSamsingPostApi(),
                   builder: (context, AsyncSnapshot<Modal1> snapshot) {
                     if (!snapshot.hasData) {
-                      return const Center(
-                        child: Text('Loading'),
+                      return Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Container(
+                          height: 250,
+                          width: 150,
+                          // color: Colors.white,
+                          child: Column(
+                            children: [
+                              Container(
+                                color: Colors.white,
+                                height: 170,
+                                width: 160,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Card(
+                                      //elevation: 10,
+                                      // color: Colors.white,
+                                      child: Image.network(
+                                          "https://imagekit.io/blog/content/images/2019/12/image-optimization.jpg",
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: RichText(
+                                  text: const TextSpan(
+                                      text: "name",
+                                      style: TextStyle(
+                                          color: Colors.black, fontSize: 16),
+                                      children: <TextSpan>[
+                                        TextSpan(
+                                          text: " Rs.999",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                        )
+                                      ]),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
                       );
                     } else {
                       return Padding(

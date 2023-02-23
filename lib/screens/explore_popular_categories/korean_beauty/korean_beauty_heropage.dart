@@ -28,6 +28,7 @@ class _KoreanHeroPageState extends State<KoreanHeroPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 30,),
             Hero(
               tag: widget.index,
               child: Padding(
@@ -35,8 +36,9 @@ class _KoreanHeroPageState extends State<KoreanHeroPage> {
                 child: Container(
                   height: MediaQuery.of(context).size.height * .5,
                   width: double.infinity,
+                  
                   decoration: BoxDecoration(
-                      // borderRadius: BorderRadius.circular(20),
+                       borderRadius: BorderRadius.circular(20),
                       image: DecorationImage(
                           image: NetworkImage(
                             widget.immage,
