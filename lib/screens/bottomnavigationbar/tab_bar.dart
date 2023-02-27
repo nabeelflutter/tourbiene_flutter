@@ -96,6 +96,7 @@ class _TabBarPageState extends State<TabBarPage> with TickerProviderStateMixin {
                         nextIcon = Icons.add_box_rounded;
                         currentSelected = 1;
                       });
+                      
                       _initAnimationAndStart(_positionAnimation.value, 0);
                       showModalBottomSheet(
                         context: context,
