@@ -1,24 +1,25 @@
 // ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 // ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
-import 'package:tourbiene/authentication/authentioncation_page.dart';
+import 'package:tourbiene/Modals/signup_model.dart';
+import 'package:tourbiene/authentication/api_service.dart';
+
 
 part 'signup_event.dart';
 part 'signup_state.dart';
 
 class SignupBloc extends Bloc<SignupEvent, SignupState> {
   SignupBloc() : super(const SignupInitial()) {
-    on<SignupClickEvent>((event, emit) async {
+    final ApiService apiService = ApiService();
+    on<SignUpSuccessfullyEvent>((event, emit) async {
       emit.call(const SignupLoadingState());
       try {
-        User? user = await signupWithEmailAndPassword(
-            event.name, event.email, event.password);
+      Map<String, dynamic> data = await apiService.signUpUser(event.model);
 
-        emit(SignupLoadedState(user));
-      } on FirebaseAuthException catch (e) {
-        emit.call(SignupErrorState(e.code));
+        emit(const SignUpSuccessfullyState());
+      
       } catch (e) {
         emit.call(SignupErrorState(e.toString()));
       }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tourbiene/Modals/signup_model.dart';
 import 'package:tourbiene/bloc/signupbloc/signup_bloc.dart';
 import 'package:tourbiene/screens/loginscreens/login_page.dart';
 
@@ -36,10 +37,20 @@ void btnSignupClick(
           shopNameValidationKey.currentState!.validate() &&
           phoneNumberValidationKey.currentState!.validate()) {
     SignupBloc bloc = Provider.of(context, listen: false);
-    bloc.add(SignupClickEvent(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim(),
-        name: nameController.text.trim()));
+    bloc.add(SignUpSuccessfullyEvent(
+        model: SignUpUserModel(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim(),
+            displayName: nameController.text.trim(),
+            lastName: lastNameController.text.trim(),
+            shopName: shopNameController.text.trim(),
+            shopUrl: shopUrlController.text.trim(),
+            companyName: companyNameController.text.trim(),
+            companyId: companyIdController.text.trim(),
+            taxNumber: taxNumberController.text.trim(),
+            bankName: bankNameController.text.trim(),
+            bankIBAN: bankIbanController.text.trim(),
+            phoneNumber: phoneNumberController.text.trim())));
   }
 }
 

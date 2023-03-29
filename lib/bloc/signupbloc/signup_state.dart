@@ -13,9 +13,8 @@ class SignupLoadingState extends SignupState {
   const SignupLoadingState();
 }
 
-class SignupLoadedState extends SignupState {
-  final User? user;
-  const SignupLoadedState(this.user);
+class SignUpSuccessfullyState extends SignupState {
+ const SignUpSuccessfullyState();
 }
 
 class SignupErrorState extends SignupState {

@@ -31,7 +31,7 @@ class SignupPage extends StatelessWidget {
                     strokeWidth: 3,
                   ),
                 );
-              } else if (state is SignupLoadedState) {
+              } else if (state is SignUpSuccessfullyState) {
                 SchedulerBinding.instance.addPostFrameCallback((Duration dur) {
                   Navigator.pushNamed(context, MyAppDrawer.pageName,
                       arguments: null);
