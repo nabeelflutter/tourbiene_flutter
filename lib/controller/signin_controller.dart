@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tourbiene/Modals/login_modal.dart';
 import 'package:tourbiene/bloc/googlebloc/authentication_bloc.dart';
 import 'package:tourbiene/bloc/googlebloc/authentication_event.dart';
 import 'package:tourbiene/bloc/signinbloc/login_bloc.dart';
@@ -82,8 +83,10 @@ void btnSignin(
   if (globalKey.currentState!.validate() &&
       emailGlobalKey.currentState!.validate() &&
       passwordGlobalKey.currentState!.validate()) {
-    signinBloc.add(LoginFetchEvent(emailController.text.trim().toString(),
-        passwordController.text.trim().toString()));
+    signinBloc.add(LoginSuccessfullyEvent(
+        model: SignInUserModel(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim())));
   }
 }
 

@@ -1,16 +1,11 @@
 // ignore_for_file: sized_box_for_whitespace, must_be_immutable
 
-import 'dart:convert';
+
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:http/http.dart' as http;
-import 'package:shimmer/shimmer.dart';
-import 'package:tourbiene/modal/huvavy.dart';
-import 'package:tourbiene/modal/modal4.dart';
-import 'package:tourbiene/modal/modal5.dart';
-import 'package:tourbiene/modal/modal6.dart';
-import 'package:tourbiene/modal/rochship.dart';
+
+
 import 'package:tourbiene/screens/bottomnavigationbar/tab_bar.dart' as prefix0;
 import 'package:tourbiene/screens/categories.dart';
 import 'package:tourbiene/screens/deals.dart';
@@ -19,8 +14,7 @@ import 'package:tourbiene/screens/explore_popular_categories/korean_beauty/korea
 import 'package:tourbiene/screens/saveedscreen/saved.dart';
 import 'package:tourbiene/screens/selling.dart';
 
-import '../modal/modal.dart';
-import '../modal/samsing_modal.dart';
+
 
 class HomePage extends StatelessWidget {
   Map? userDara = {};
@@ -317,9 +311,9 @@ class HomePage extends StatelessWidget {
               itemCount: 5,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return FutureBuilder<Modal1>(
+                return FutureBuilder(
                   // future: getSamsingPostApi(),
-                  builder: (context, AsyncSnapshot<Modal1> snapshot) {
+                  builder: (context, AsyncSnapshot snapshot) {
                     if (!snapshot.hasData) {
                       return Padding(
                         padding: const EdgeInsets.all(8),
@@ -1023,9 +1017,9 @@ class HomePage extends StatelessWidget {
               itemCount: 5,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return FutureBuilder<Modal1>(
+                return FutureBuilder(
                   // future: getSamsingPostApi(),
-                  builder: (context, AsyncSnapshot<Modal1> snapshot) {
+                  builder: (context, AsyncSnapshot snapshot) {
                     if (!snapshot.hasData) {
                       return Padding(
                         padding: const EdgeInsets.all(8),
