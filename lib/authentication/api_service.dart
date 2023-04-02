@@ -26,7 +26,7 @@ class ApiService {
 // SignUpUser
   Future<Map<String, dynamic>> signUpUser(SignUpUserModel model) async {
     Response response = await post(
-      Uri.parse("http://localhost:8000/user/login"),
+      Uri.parse("http://10.0.2.2:8000/user/register"),
       body: jsonEncode(
         {
           'email': model.email!,
@@ -48,7 +48,9 @@ class ApiService {
       },
     );
     Map<String, dynamic> data = jsonDecode(response.body);
+    print(response.body);
 
     return data;
   }
+
 }

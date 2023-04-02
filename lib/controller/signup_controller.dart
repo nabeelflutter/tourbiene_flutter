@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tourbiene/Modals/signup_model.dart';
+import 'package:tourbiene/authentication/api_service.dart';
 import 'package:tourbiene/bloc/signupbloc/signup_bloc.dart';
+import 'package:tourbiene/main.dart';
 import 'package:tourbiene/screens/loginscreens/login_page.dart';
 
 /*
@@ -28,17 +30,18 @@ void btnSignupClick(
     required GlobalKey<FormFieldState> nameValidationKey,
     required TextEditingController passwordController,
     required GlobalKey<FormState> globalKey,
-    required GlobalKey<FormFieldState> passwordValidationKey}) {
+    required GlobalKey<FormFieldState> passwordValidationKey}) async{
   if (globalKey.currentState!.validate() &&
           emailValidationKey.currentState!.validate() &&
           passwordValidationKey.currentState!.validate() &&
           nameValidationKey.currentState!.validate() ||
       lastNameValidationKey.currentState!.validate() &&
           shopNameValidationKey.currentState!.validate() &&
-          phoneNumberValidationKey.currentState!.validate()) {
-    SignupBloc bloc = Provider.of(context, listen: false);
-    bloc.add(SignUpSuccessfullyEvent(
-        model: SignUpUserModel(
+          phoneNumberValidationKey.currentState!.validate()){
+           
+   SignupBloc bloc = Provider.of(context, listen: false);
+   bloc.add(SignUpSuccessfullyEvent(
+       model:  SignUpUserModel(
             email: emailController.text.trim(),
             password: passwordController.text.trim(),
             displayName: nameController.text.trim(),
@@ -50,7 +53,8 @@ void btnSignupClick(
             taxNumber: taxNumberController.text.trim(),
             bankName: bankNameController.text.trim(),
             bankIBAN: bankIbanController.text.trim(),
-            phoneNumber: phoneNumberController.text.trim())));
+            phoneNumber: phoneNumberController.text.trim())
+            ));
   }
 }
 
