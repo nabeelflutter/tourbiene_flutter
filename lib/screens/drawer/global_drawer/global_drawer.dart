@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:tourbiene/authentication/authentioncation_page.dart';
+
+
 import 'package:tourbiene/screens/categories.dart';
 import 'package:tourbiene/screens/deals.dart';
 import 'package:tourbiene/screens/drawer/bids_offers_page.dart';
@@ -12,9 +12,9 @@ import 'package:tourbiene/screens/drawer/notification_page.dart';
 import 'package:tourbiene/screens/drawer/purchase_page.dart';
 import 'package:tourbiene/screens/drawer/setting_page.dart';
 import 'package:tourbiene/screens/drawer/watching/watching.dart';
-import 'package:tourbiene/screens/googlescreens/google_register_page.dart';
+
 import 'package:tourbiene/screens/googlescreens/google_screen.dart';
-import 'package:tourbiene/screens/googlescreens/signin_btns_page.dart';
+
 import 'package:tourbiene/screens/saveedscreen/saved.dart';
 import 'package:tourbiene/screens/selling.dart';
 
@@ -29,7 +29,7 @@ class GlobalDrawer extends StatefulWidget {
 }
 
 class _GlobalDrawerState extends State<GlobalDrawer> {
-  final user = FirebaseAuth.instance.currentUser;
+  //final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -39,27 +39,28 @@ class _GlobalDrawerState extends State<GlobalDrawer> {
           crossAxisAlignment: CrossAxisAlignment.start,
           // ignore: sort_child_properties_last
           children: [
-            Container(
-              color: Colors.purple,
-              height: 220,
-              child: DrawerHeader(
-                  child: UserAccountsDrawerHeader(
-                decoration: const BoxDecoration(color: Colors.purple),
-                currentAccountPicture: user == null
-                    ? CircleAvatar()
-                    : CircleAvatar(
-                        backgroundImage:
-                            NetworkImage(user!.photoURL.toString()),
-                      ),
-                accountEmail: Text(user!.email.toString(),
-                    style: const TextStyle(color: Colors.white)),
-                accountName: Text(user!.displayName.toString(),
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18)),
-              )),
-            ),
+            // Container(
+            //   color: Colors.purple,
+            //   height: 220,
+            //   child: DrawerHeader(
+            //       // child: UserAccountsDrawerHeader(
+            //     // decoration: const BoxDecoration(color: Colors.purple),
+            //     // currentAccountPicture: user == null
+            //     //     ? const CircleAvatar()
+            //     //     : CircleAvatar(
+            //     //         backgroundImage:
+            //     //             NetworkImage(user!.photoURL.toString()),
+            //     //       ),
+            //     // accountEmail: Text(user!.email.toString(),
+            //     //     style: const TextStyle(color: Colors.white)),
+            //     // accountName: Text(user!.displayName.toString(),
+            //     //     style: const TextStyle(
+            //     //         color: Colors.white,
+            //     //         fontWeight: FontWeight.bold,
+            //     //         fontSize: 18)),
+            //   )
+            //   ),
+            // ),
             const ListTile(
               leading: Icon(Icons.home),
               title: Text('Home'),
@@ -155,7 +156,7 @@ class _GlobalDrawerState extends State<GlobalDrawer> {
             ),
             ListTile(
               onTap: () {
-                signout();
+               // signout();
                 Navigator.pushNamed(context, GoogleSignInPage.pageName);
               },
               leading: const Icon(Icons.logout),
