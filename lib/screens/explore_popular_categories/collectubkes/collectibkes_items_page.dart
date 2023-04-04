@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:tourbiene/screens/drawer/global_drawer/global_drawer.dart';
-import 'package:tourbiene/screens/explore_popular_categories/collectubkes/collectibles_heroPage.dart';
+import 'package:tourbiene/screens/explore_popular_categories/collectubkes/collectibles_heropage.dart';
 
 class CollectiblesPage extends StatelessWidget {
   const CollectiblesPage({super.key});

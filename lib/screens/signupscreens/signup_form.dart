@@ -114,7 +114,7 @@ class _SignupFormState extends State<SignupForm> {
                     style: const TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       prefixIcon: const Icon(FontAwesomeIcons.userTie),
-                      label: const Text('User Name'),
+                      label: const Text('First Name'),
                       hintText: 'please enter name',
                       labelStyle:
                           const TextStyle(color: Colors.black, fontSize: 16),
@@ -135,6 +135,7 @@ class _SignupFormState extends State<SignupForm> {
                     ),
                   ),
                 ),
+                 
                 SizedBox(
                   height: height * .01,
                 ),
@@ -227,7 +228,7 @@ class _SignupFormState extends State<SignupForm> {
                 isChack == true
                     ? Column(
                         children: [
-                          SizedBox(
+                         SizedBox(
                             height: height * .10,
                             width: width,
                             child: TextFormField(

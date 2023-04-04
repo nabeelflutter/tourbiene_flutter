@@ -28,7 +28,7 @@ class _KoreanHeroPageState extends State<KoreanHeroPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 30,),
+            const SizedBox(height: 30,),
             Hero(
               tag: widget.index,
               child: Padding(

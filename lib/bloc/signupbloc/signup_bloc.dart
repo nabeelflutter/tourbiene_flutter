@@ -16,7 +16,7 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
     on<SignUpSuccessfullyEvent>((event, emit) async {
       emit.call(const SignupLoadingState());
       try {
-      Map<String, dynamic> data = await apiService.signUpUser(event.model);
+            await apiService.signUpUser(event.model);
 
         emit(const SignUpSuccessfullyState());
       

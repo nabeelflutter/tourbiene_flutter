@@ -27,6 +27,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     //  List<Modal> postList = [];
 
+    // ignore: unused_local_variable
     var imageUrl =
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDNTXJUKD5fRXQzYWZE3eSCkihN41OOu4PAg&usqp=CAU';
     List list = [

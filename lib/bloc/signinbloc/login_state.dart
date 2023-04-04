@@ -10,8 +10,8 @@ class LoginInitial extends LoginState {}
 class LoginLoadingState extends LoginState {}
 
 class LoginLoadedState extends LoginState {
-final SignInUserModel model;
-  const LoginLoadedState(this.model);
+
+  const LoginLoadedState();
 }
 
 class LoginErrorState extends LoginState {

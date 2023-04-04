@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:tourbiene/screens/drawer/global_drawer/global_drawer.dart';
-import 'package:tourbiene/screens/explore_popular_categories/fishing/fishing_heroPage.dart';
+import 'package:tourbiene/screens/explore_popular_categories/fishing/fishing_heropage.dart';
 
 class FishiingPage extends StatelessWidget {
   const FishiingPage({super.key});

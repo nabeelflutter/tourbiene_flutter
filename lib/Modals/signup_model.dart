@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 class SignUpUserModel {
-  String? email;
+  String? username;
   String? password;
-  String? displayName;
-  String? lastName;
+  String? first_name;
+  String? last_name;
   String? shopName;
   String? shopUrl;
   String? companyName;
@@ -14,10 +14,10 @@ class SignUpUserModel {
   String? bankIBAN;
   String? phoneNumber;
   SignUpUserModel({
-    this.email,
+    this.username,
     this.password,
-    this.displayName,
-    this.lastName,
+    this.first_name,
+    this.last_name,
     this.shopName,
     this.shopUrl,
     this.companyName,
@@ -34,10 +34,10 @@ class SignUpUserModel {
   //String toJson() => json.encode(toMap());
 
   factory SignUpUserModel.fromMap(Map<String, dynamic> json) => SignUpUserModel(
-        email: json["Email"],
+        username: json["Email"],
         password: json["Password"],
-        displayName: json["DisplayName"],
-        lastName: json["LastName"],
+        first_name: json["DisplayName"],
+        last_name: json["LastName"],
         shopName: json["ShopName"],
         shopUrl: json["ShopURL"],
         companyName: json["CompanyName"],
@@ -49,10 +49,10 @@ class SignUpUserModel {
       );
 
   Map<String, dynamic> toMap() => {
-        "Email": email,
+        "Email": username,
         "Password": password,
-        "DisplayName": displayName,
-        "LastName": lastName,
+        "DisplayName": first_name,
+        "LastName": last_name,
         "ShopName": shopName,
         "ShopURL": shopUrl,
         "CompanyName": companyName,

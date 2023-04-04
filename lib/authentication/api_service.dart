@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:io';
+
 
 import 'package:http/http.dart';
 import 'package:tourbiene/Modals/login_modal.dart';
@@ -19,6 +19,11 @@ class ApiService {
       },
     );
     Map<String, dynamic> data = jsonDecode(response.body);
+     print("####################################################");
+ 
+   
+        print(response.body);
+     
 
     return data;
   }
@@ -29,10 +34,10 @@ class ApiService {
       Uri.parse("http://127.0.0.1:8000/user/register/"),
       body: jsonEncode(
         {
-          'email': model.email!,
+          'email': model.username!,
           'password': model.password!,
-          'displayName': model.displayName!,
-          'lastName': model.lastName!,
+          'displayName': model.first_name!,
+          'lastName': model.last_name!,
           'shopName': model.shopName!,
           'shopUrl': model.shopUrl!,
           'companyName': model.companyName!,
@@ -48,7 +53,8 @@ class ApiService {
       },
     );
     Map<String, dynamic> data = jsonDecode(response.body);
-    print(response.body);
+     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+     print(response.body);
 
     return data;
   }

@@ -16,8 +16,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     on<LoginSuccessfullyEvent>((event, emit) async {
       emit.call(LoginLoadingState());
       try {
-         Map<String, dynamic> data = await apiService.signInUser(event.model);
-        emit(LoginLoadedState(data as SignInUserModel));
+         await apiService.signInUser(event.model);
+         print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        emit(const LoginLoadedState());
       }  catch (e) {
         emit.call(LoginErrorState(e.toString()));
       }
