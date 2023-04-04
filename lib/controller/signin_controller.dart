@@ -87,6 +87,9 @@ void btnSignin(
         model: SignInUserModel(
             email: emailController.text.trim(),
             password: passwordController.text.trim())));
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("User Login Succesfully")));
+  }else{
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("User do not Login Succesfully")));
   }
 }
 

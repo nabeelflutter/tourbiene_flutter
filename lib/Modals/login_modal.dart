@@ -12,8 +12,8 @@ class SignInUserModel {
   }
 
   SignInUserModel.fromJson(dynamic json) {
-    _email = json['Email'];
-    _password = json['Password'];
+    _email = json['email'];
+    _password = json['password'];
   }
 
   SignInUserModel copyWith({
@@ -29,8 +29,8 @@ class SignInUserModel {
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['Email'] = _email;
-    map['Password'] = _password;
+    map['email'] = _email;
+    map['password'] = _password;
     return map;
   }
 }

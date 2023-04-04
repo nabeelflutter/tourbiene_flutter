@@ -316,11 +316,11 @@ class _SignupFormState extends State<SignupForm> {
                               onChanged: (value) {
                                 shopIdGlobalKey.currentState!.validate();
                               },
-                              controller: shopNameController,
+                              controller: shopUrlController,
                               style: const TextStyle(color: Colors.black),
                               decoration: InputDecoration(
                                 helperText:
-                                    'https://tourbiene.com/store/${shopNameController.value.text.toString()}',
+                                    'https://tourbiene.com/store/${shopUrlController.value.text.toString()}',
                                 prefixIcon: const Icon(FontAwesomeIcons.shop),
                                 label: const Text('Shop URL'),
                                 labelStyle: const TextStyle(

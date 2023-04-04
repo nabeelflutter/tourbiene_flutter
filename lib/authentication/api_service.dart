@@ -19,10 +19,7 @@ class ApiService {
       },
     );
     Map<String, dynamic> data = jsonDecode(response.body);
-     print("####################################################");
- 
-   
-        print(response.body);
+  
      
 
     return data;
@@ -36,16 +33,16 @@ class ApiService {
         {
           'email': model.username!,
           'password': model.password!,
-          'displayName': model.first_name!,
-          'lastName': model.last_name!,
-          'shopName': model.shopName!,
-          'shopUrl': model.shopUrl!,
-          'companyName': model.companyName!,
-          'companyId': model.companyId!,
-          'taxNumber': model.taxNumber!,
-          'phoneNumber': model.phoneNumber!,
-          'bankName': model.bankName!,
-          'bankIBAN': model.bankIBAN!,
+          'first_name': model.first_name!,
+          'last_name': model.last_name!,
+          'shop_name': model.shopName!,
+          'shop_url': model.shopUrl!,
+          'company_name': model.companyName!,
+          'company_id': model.companyId!,
+          'tax_number': model.taxNumber!,
+          'phone_number': model.phoneNumber!,
+          'bank_number': model.bankName!,
+          'bank_iban': model.bankIBAN!,
         },
       ),
       headers: {
@@ -53,8 +50,7 @@ class ApiService {
       },
     );
     Map<String, dynamic> data = jsonDecode(response.body);
-     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-     print(response.body);
+   
 
     return data;
   }
