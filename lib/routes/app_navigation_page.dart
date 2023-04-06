@@ -127,10 +127,10 @@ class AppNavigation {
               builder: (context) => const GoogleSignInPage(),
               settings: settings);
         }
-        case ChangePasswordPage.pageName:
+        case ChangePasswordScreen.pageName:
         {
           return MaterialPageRoute(
-              builder: (context) =>  ChangePasswordPage(),
+              builder: (context) =>  ChangePasswordScreen(),
               settings: settings);
         }
 

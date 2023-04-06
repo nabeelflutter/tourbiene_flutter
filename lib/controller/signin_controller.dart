@@ -117,7 +117,7 @@ void btnContinue({
 }) {
   if (globalKey.currentState!.validate() &&
       emailGlobalKey.currentState!.validate()) {
-        Navigator.pushNamed(context, ChangePasswordPage.pageName);
+        Navigator.pushNamed(context, ChangePasswordScreen.pageName);
    
   }
 }
@@ -126,7 +126,7 @@ void btnResetClick({
   required BuildContext context,
   required TextEditingController oldPasswordController,
   required GlobalKey<FormFieldState> oldPasswordGlobalKey,
-    required TextEditingController passwordController,
+  required TextEditingController passwordController,
   required GlobalKey<FormFieldState> passwordGlobalKey,
   required GlobalKey<FormState> globalKey,
 }) {
