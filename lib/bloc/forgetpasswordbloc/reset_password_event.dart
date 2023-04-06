@@ -7,5 +7,5 @@ class ResetPasswordInitialEvent extends ResetPasswordEvent {}
 
 class ResetPasswordSuccessfullyEvent extends ResetPasswordEvent {
   final String email;
-  ResetPasswordSuccessfullyEvent({required this.email});
+  ResetPasswordSuccessfullyEvent({required this.email, required ResetPasswprdModel model});
 }

@@ -2,10 +2,10 @@
 
 import 'dart:convert';
 
-class ForgetPasswprdModel {
+class ResetPasswprdModel {
   String? _old_password;
   String? _password;
-  ForgetPasswprdModel({
+  ResetPasswprdModel({
     String? old_password,
     String? password,
   }) {
@@ -13,16 +13,16 @@ class ForgetPasswprdModel {
     _password = password;
   }
 
-  ForgetPasswprdModel.fromJson(dynamic json) {
+  ResetPasswprdModel.fromJson(dynamic json) {
     _old_password = json['old_password'];
     _password = json['password'];
   }
 
-  ForgetPasswprdModel copyWith({
+  ResetPasswprdModel copyWith({
     String? old_password,
     String? password,
   }) =>
-      ForgetPasswprdModel(
+      ResetPasswprdModel(
         old_password: old_password ?? _old_password,
         password: password ?? _password,
       );
@@ -37,7 +37,7 @@ class ForgetPasswprdModel {
   }
 }
 
-ForgetPasswprdModel signInUserModelFromJson(String str) =>
-    ForgetPasswprdModel.fromJson(json.decode(str));
-String signInUserModelToJson(ForgetPasswprdModel data) =>
+ResetPasswprdModel signInUserModelFromJson(String str) =>
+    ResetPasswprdModel.fromJson(json.decode(str));
+String signInUserModelToJson(ResetPasswprdModel data) =>
     json.encode(data.toJson());

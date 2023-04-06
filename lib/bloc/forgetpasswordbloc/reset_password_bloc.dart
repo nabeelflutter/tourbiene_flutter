@@ -3,6 +3,7 @@
 import 'package:bloc/bloc.dart';
 
 import 'package:meta/meta.dart';
+import 'package:tourbiene/Modals/reset_password_model.dart';
 
 import 'package:tourbiene/bloc/forgetpasswordbloc/reset_password_staste.dart';
 

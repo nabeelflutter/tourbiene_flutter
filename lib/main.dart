@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tourbiene/bloc/connectivitybloc/connectivity_bloc.dart';
+import 'package:tourbiene/bloc/forgetpasswordbloc/reset_password_bloc.dart';
 import 'package:tourbiene/bloc/googlebloc/authentication_bloc.dart';
 import 'package:tourbiene/bloc/signinbloc/login_bloc.dart';
 import 'package:tourbiene/bloc/signupbloc/signup_bloc.dart';
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
         BlocProvider<LoginBloc>(
           create: (context) => LoginBloc(),
         ),
-        BlocProvider<GoogleSignInBloc>(create: (context) => GoogleSignInBloc())
+        BlocProvider<GoogleSignInBloc>(create: (context) => GoogleSignInBloc()),
+        BlocProvider<ResetPasswordBloc>(create: (context) => ResetPasswordBloc(),)
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,

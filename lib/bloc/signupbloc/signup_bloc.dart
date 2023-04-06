@@ -17,7 +17,7 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
       emit.call(const SignupLoadingState());
       try {
             await apiService.signUpUser(event.model);
-          print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+         
         emit(const SignUpSuccessfullyState());
       
       } catch (e) {

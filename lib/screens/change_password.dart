@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tourbiene/bloc/forgetpasswordbloc/reset_password_bloc.dart';
+import 'package:tourbiene/bloc/forgetpasswordbloc/reset_password_staste.dart';
+import 'package:tourbiene/bloc/resetPassword_bloc/resetpassword_bloc.dart';
 import 'package:tourbiene/controller/signin_controller.dart';
+import 'package:tourbiene/main.dart';
+import 'package:tourbiene/widgets/dialog.dart';
 import 'package:tourbiene/widgets/simple_btn.dart';
 
 class ChangePasswordPage extends StatefulWidget {
@@ -46,143 +53,174 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Form(
-            key: widget.globalKey,
-            child: Column(
-              children: [
-                SizedBox(height: height * .05),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: SizedBox(
-                      height: height * .08,
-                      width: width,
-                      child: const Center(
-                        child: Text(
-                          "Please Enter Your Old Password And Change Your Password",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 25.0,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      )),
-                ),
-               
-
-               
-                //Input Field old
-                SizedBox(
-                  height: height * .10,
-                  width: width,
-                  child: TextFormField(
-                    keyboardType: TextInputType.emailAddress,
-                    key: widget.oldPasswordGlobalKey,
-                    validator: isValidOldPassword,
-                    onChanged: (value) {
-                      widget.oldPasswordGlobalKey?.currentState!.validate();
-                    },
-                    controller: widget.oldPasswordController,
-                    style: const TextStyle(color: Colors.black),
-                    decoration: InputDecoration(
-                      suffixIcon: GestureDetector(
-                        onTap: _textObscured,
-                        child: Icon(
-                          _obscured
-                              ? Icons.visibility_off_rounded
-                              : Icons.visibility_rounded,
-                        ),
-                      ),
-                      label: const Text('User Old Password'),
-                      hintText: 'please enter old password',
-                      labelStyle:
-                          const TextStyle(color: Colors.black, fontSize: 16),
-                      errorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(
-                          color: Colors.red,
-                          width: 1,
-                        ),
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(
-                          color: Colors.black,
-                          width: 3,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(
-                  height: height * .01,
-                ),
-                //Input field Password
-                SizedBox(
-                  height: height * .10,
-                  width: width,
-                  child: TextFormField(
-                    obscuringCharacter: '*',
-                    obscureText: _obscured,
-                    key: widget.passwordGlobalKey,
-                    validator: isValidPassword,
-                    onChanged: (value) {
-                      widget.passwordGlobalKey?.currentState!.validate();
-                    },
-                    controller: widget.passwordController,
-                    style: const TextStyle(color: Colors.black),
-                    decoration: InputDecoration(
-                      prefixIcon: const Icon(Icons.https_outlined),
-                      suffixIcon: GestureDetector(
-                        onTap: _textObscured,
-                        child: Icon(
-                          _obscured
-                              ? Icons.visibility_off_rounded
-                              : Icons.visibility_rounded,
-                        ),
-                      ),
-                      label: const Text('User Password'),
-                      hintText: 'Password',
-                      labelStyle:
-                          const TextStyle(color: Colors.black, fontSize: 16),
-                      errorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(
-                          color: Colors.red,
-                          width: 1,
-                        ),
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(
-                          color: Colors.black,
-                          width: 3,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-               
-
-                ResetPasswordButton(
-                    resetButtonClick: btnResetClick,
-                   olPasswordController : widget.oldPasswordController!,
-                    passwordController: widget.passwordController!,
-                    oldPasswordGlobalKey: widget.oldPasswordGlobalKey!,
-                    passwordGlobalKey: widget.passwordGlobalKey!,
-                    text: 'Sign In',
-                    width: width,
-                    height: height * .08,
-                    globalKey:widget.globalKey!),
-               
-               
-              ],
-            ),
-          ),
-        ),
-      ),
+      body: Stack(
+         children: [
+         Padding(
+           padding: const EdgeInsets.symmetric(horizontal: 20),
+           child: Form(
+             key: widget.globalKey,
+             child: Column(
+               children: [
+                 SizedBox(height: height * .05),
+                 Padding(
+                   padding: const EdgeInsets.symmetric(horizontal: 20),
+                   child: SizedBox(
+                       height: height * .08,
+                       width: width,
+                       child: const Center(
+                         child: Text(
+                           "Please Enter Your Old Password And Change Your Password",
+                           style: TextStyle(
+                               color: Colors.black,
+                               fontSize: 25.0,
+                               fontWeight: FontWeight.w500),
+                         ),
+                       )),
+                 ),
+                
+      
+                
+                 //Input Field old
+                 SizedBox(
+                   height: height * .10,
+                   width: width,
+                   child: TextFormField(
+                     keyboardType: TextInputType.emailAddress,
+                     key: widget.oldPasswordGlobalKey,
+                     validator: isValidOldPassword,
+                     onChanged: (value) {
+                       widget.oldPasswordGlobalKey?.currentState!.validate();
+                     },
+                     controller: widget.oldPasswordController,
+                     style: const TextStyle(color: Colors.black),
+                     decoration: InputDecoration(
+                       suffixIcon: GestureDetector(
+                         onTap: _textObscured,
+                         child: Icon(
+                           _obscured
+                               ? Icons.visibility_off_rounded
+                               : Icons.visibility_rounded,
+                         ),
+                       ),
+                       label: const Text('User Old Password'),
+                       hintText: 'please enter old password',
+                       labelStyle:
+                           const TextStyle(color: Colors.black, fontSize: 16),
+                       errorBorder: OutlineInputBorder(
+                         borderRadius: BorderRadius.circular(10),
+                         borderSide: const BorderSide(
+                           color: Colors.red,
+                           width: 1,
+                         ),
+                       ),
+                       border: OutlineInputBorder(
+                         borderRadius: BorderRadius.circular(10),
+                         borderSide: const BorderSide(
+                           color: Colors.black,
+                           width: 3,
+                         ),
+                       ),
+                     ),
+                   ),
+                 ),
+      
+                 SizedBox(
+                   height: height * .01,
+                 ),
+                 //Input field Password
+                 SizedBox(
+                   height: height * .10,
+                   width: width,
+                   child: TextFormField(
+                     obscuringCharacter: '*',
+                     obscureText: _obscured,
+                     key: widget.passwordGlobalKey,
+                     validator: isValidPassword,
+                     onChanged: (value) {
+                       widget.passwordGlobalKey?.currentState!.validate();
+                     },
+                     controller: widget.passwordController,
+                     style: const TextStyle(color: Colors.black),
+                     decoration: InputDecoration(
+                       prefixIcon: const Icon(Icons.https_outlined),
+                       suffixIcon: GestureDetector(
+                         onTap: _textObscured,
+                         child: Icon(
+                           _obscured
+                               ? Icons.visibility_off_rounded
+                               : Icons.visibility_rounded,
+                         ),
+                       ),
+                       label: const Text('User Password'),
+                       hintText: 'Password',
+                       labelStyle:
+                           const TextStyle(color: Colors.black, fontSize: 16),
+                       errorBorder: OutlineInputBorder(
+                         borderRadius: BorderRadius.circular(10),
+                         borderSide: const BorderSide(
+                           color: Colors.red,
+                           width: 1,
+                         ),
+                       ),
+                       border: OutlineInputBorder(
+                         borderRadius: BorderRadius.circular(10),
+                         borderSide: const BorderSide(
+                           color: Colors.black,
+                           width: 3,
+                         ),
+                       ),
+                     ),
+                   ),
+                 ),
+                
+      
+                 ResetPasswordButton(
+                     resetButtonClick: btnResetClick,
+                    olPasswordController : widget.oldPasswordController!,
+                     passwordController: widget.passwordController!,
+                     oldPasswordGlobalKey: widget.oldPasswordGlobalKey!,
+                     passwordGlobalKey: widget.passwordGlobalKey!,
+                     text: 'Sign In',
+                     width: width,
+                     height: height * .08,
+                     globalKey:widget.globalKey!),
+                
+                
+               ],
+             ),
+           ),
+         ),
+         
+          BlocBuilder<ResetPasswordBloc, ResetPasswordState>(
+              builder: (context, state) {
+                if (state is ResetpasswordInitial) {
+                  return const SizedBox();
+                } else if (state is ResetPasswordLoadingState) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else if (state is ResetPasswordLoadedState) {
+                  SchedulerBinding.instance
+                      .addPostFrameCallback((Duration dur) {
+                    Navigator.pushReplacementNamed(
+                        context, MyAppDrawer.pageName,
+                        arguments: null);
+                  });
+                  return const SizedBox();
+                } else if (state is ResetPasswordFailedState) {
+                  SchedulerBinding.instance
+                      .addPostFrameCallback((Duration dur) {
+                    showDialog(
+                        context: context,
+                        builder: (context) => CustomDialog(masg: state.message));
+                  });
+                  return const SizedBox();
+                } else {
+                  return const SizedBox();
+                }
+              },
+            )
+     ] ),
     );
   }
 }

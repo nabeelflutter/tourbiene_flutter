@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tourbiene/Modals/login_modal.dart';
+import 'package:tourbiene/Modals/reset_password_model.dart';
+import 'package:tourbiene/bloc/forgetpasswordbloc/reset_password_bloc.dart';
 import 'package:tourbiene/bloc/googlebloc/authentication_bloc.dart';
 import 'package:tourbiene/bloc/googlebloc/authentication_event.dart';
+import 'package:tourbiene/bloc/resetPassword_bloc/resetpassword_bloc.dart';
 import 'package:tourbiene/bloc/signinbloc/login_bloc.dart';
 import 'package:tourbiene/bloc/signinbloc/login_event.dart';
 import 'package:tourbiene/screens/change_password.dart';
 import 'package:tourbiene/screens/googlescreens/forgetpasswordscreens/reset_password_pagge.dart';
 import 'package:tourbiene/screens/googlescreens/google_register_page.dart';
-import 'package:tourbiene/screens/home_page.dart';
+
 import 'package:tourbiene/screens/signupscreens/signup_page.dart';
 
 String? isValidEmail(String? email) {
@@ -127,8 +130,14 @@ void btnResetClick({
   required GlobalKey<FormFieldState> passwordGlobalKey,
   required GlobalKey<FormState> globalKey,
 }) {
+  ResetPasswordBloc resetPasswordBloc = Provider.of<ResetPasswordBloc>(context,listen: false);
   if (globalKey.currentState!.validate() &&
-      oldPasswordGlobalKey.currentState!.validate() && passwordGlobalKey.currentState!.validate()) {}
+      oldPasswordGlobalKey.currentState!.validate() && passwordGlobalKey.currentState!.validate()) {
+     resetPasswordBloc.add(ResetPassword(model: ResetPasswprdModel(old_password: oldPasswordController.text.trim(),password: passwordController.text.trim())) as ResetPasswordEvent );
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("User Password Succesfully Reset")));
+  }else{
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("User do not Reset Password")));
+  }
 }
 
 void registerNowClick(BuildContext context) {
