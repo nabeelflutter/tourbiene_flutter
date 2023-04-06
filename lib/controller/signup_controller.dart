@@ -58,8 +58,8 @@ void btnSignupClick(
 
             ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("User Register Successfully")));
   }else{
-
-  } ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("User not Register Successfully")));
+ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("User not Register Successfully")));
+  } 
 }
 
 void signinClick(BuildContext context) {

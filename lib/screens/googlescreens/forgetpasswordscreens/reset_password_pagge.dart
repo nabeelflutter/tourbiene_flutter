@@ -125,7 +125,7 @@ class ResetPasswordPage extends StatelessWidget {
                     globalKey: globalKey,
                     emailController: emailController,
                     emailGlobalKey: emailGlobalKey,
-                    continueButtonClick: btnResetClick),
+                    continueButtonClick: btnContinue),
               ),
             ],
           ),

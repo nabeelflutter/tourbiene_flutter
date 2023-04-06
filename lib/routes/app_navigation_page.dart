@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tourbiene/main.dart';
 import 'package:tourbiene/screens/categories.dart';
+import 'package:tourbiene/screens/change_password.dart';
 import 'package:tourbiene/screens/deals.dart';
 import 'package:tourbiene/screens/drawer/bids_offers_page.dart';
 import 'package:tourbiene/screens/drawer/buy_again_page.dart';
@@ -124,6 +125,12 @@ class AppNavigation {
         {
           return MaterialPageRoute(
               builder: (context) => const GoogleSignInPage(),
+              settings: settings);
+        }
+        case ChangePasswordPage.pageName:
+        {
+          return MaterialPageRoute(
+              builder: (context) =>  ChangePasswordPage(),
               settings: settings);
         }
 

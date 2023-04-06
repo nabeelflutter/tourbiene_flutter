@@ -7,6 +7,14 @@ typedef void ContinueButtonClick({
   required GlobalKey<FormFieldState> emailGlobalKey,
   required GlobalKey<FormState> globalKey,
 });
+typedef void ResetButtonClick({
+  required BuildContext context,
+  required TextEditingController oldPasswordController,
+  required GlobalKey<FormFieldState> oldPasswordGlobalKey,
+  required TextEditingController passwordController,
+  required GlobalKey<FormFieldState> passwordGlobalKey,
+  required GlobalKey<FormState> globalKey,
+});
 // ignore: prefer_generic_function_type_aliases
 typedef void SigninBtnClick(
     {required BuildContext context,
@@ -246,6 +254,76 @@ class ContinueButton extends StatelessWidget {
               globalKey: globalKey,
               emailController: emailController,
               emailGlobalKey: emailGlobalKey);
+        },
+        child: Container(
+          decoration: BoxDecoration(
+              color: Colors.purpleAccent,
+              border: Border.all(color: const Color.fromARGB(255, 1, 6, 15)),
+              borderRadius: BorderRadius.circular(30),
+              boxShadow: const [
+                BoxShadow(
+                    color: Colors.black12,
+                    offset: Offset(-3, -3),
+                    blurRadius: 5),
+                BoxShadow(
+                    color: Colors.white54, offset: Offset(3, 3), blurRadius: 5)
+              ]),
+          child: Center(
+            child: Text(text,
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400)),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ResetPasswordButton extends StatelessWidget {
+  final double height;
+  final double width;
+  final String text;
+
+  final TextEditingController olPasswordController;
+
+  final GlobalKey<FormFieldState> oldPasswordGlobalKey;
+  
+  final TextEditingController passwordController;
+
+  final GlobalKey<FormFieldState> passwordGlobalKey;
+
+  final GlobalKey<FormState> globalKey;
+  final ResetButtonClick resetButtonClick;
+
+  const ResetPasswordButton(
+      {required this.text,
+      required this.width,
+      required this.height,
+      Key? key,
+      required this.globalKey,
+      required this.olPasswordController,
+      required this.oldPasswordGlobalKey,
+      required this.passwordController,
+      required this.passwordGlobalKey,
+      required this.resetButtonClick})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: height,
+      width: width,
+      child: GestureDetector(
+        onTap: () {
+          resetButtonClick(
+              context: context,
+              globalKey: globalKey,
+              oldPasswordController: olPasswordController,
+              oldPasswordGlobalKey: oldPasswordGlobalKey,
+              passwordController: passwordController,
+              passwordGlobalKey: passwordGlobalKey);
         },
         child: Container(
           decoration: BoxDecoration(

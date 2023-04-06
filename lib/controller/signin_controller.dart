@@ -5,6 +5,7 @@ import 'package:tourbiene/bloc/googlebloc/authentication_bloc.dart';
 import 'package:tourbiene/bloc/googlebloc/authentication_event.dart';
 import 'package:tourbiene/bloc/signinbloc/login_bloc.dart';
 import 'package:tourbiene/bloc/signinbloc/login_event.dart';
+import 'package:tourbiene/screens/change_password.dart';
 import 'package:tourbiene/screens/googlescreens/forgetpasswordscreens/reset_password_pagge.dart';
 import 'package:tourbiene/screens/googlescreens/google_register_page.dart';
 import 'package:tourbiene/screens/home_page.dart';
@@ -26,6 +27,18 @@ String? isValidEmail(String? email) {
 }
 
 String? isValidPassword(String? password) {
+  /*
+     This fucntion validate password
+   */
+  if (password!.isEmpty) {
+    return 'must enter passowrd';
+  } else if (password.length < 7) {
+    return 'length should>=7';
+  } else {
+    return null;
+  }
+}
+String? isValidOldPassword(String? password) {
   /*
      This fucntion validate password
    */
@@ -101,18 +114,21 @@ void btnContinue({
 }) {
   if (globalKey.currentState!.validate() &&
       emailGlobalKey.currentState!.validate()) {
-    Navigator.pushNamed(context, HomePage.pageName);
+        Navigator.pushNamed(context, ChangePasswordPage.pageName);
+   
   }
 }
 
 void btnResetClick({
   required BuildContext context,
-  required TextEditingController emailController,
-  required GlobalKey<FormFieldState> emailGlobalKey,
+  required TextEditingController oldPasswordController,
+  required GlobalKey<FormFieldState> oldPasswordGlobalKey,
+    required TextEditingController passwordController,
+  required GlobalKey<FormFieldState> passwordGlobalKey,
   required GlobalKey<FormState> globalKey,
 }) {
   if (globalKey.currentState!.validate() &&
-      emailGlobalKey.currentState!.validate()) {}
+      oldPasswordGlobalKey.currentState!.validate() && passwordGlobalKey.currentState!.validate()) {}
 }
 
 void registerNowClick(BuildContext context) {
