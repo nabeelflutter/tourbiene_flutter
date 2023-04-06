@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tourbiene/Modals/login_modal.dart';
 import 'package:tourbiene/Modals/reset_password_model.dart';
-import 'package:tourbiene/bloc/forgetpasswordbloc/reset_password_bloc.dart';
+import 'package:tourbiene/bloc/ChangePasswordBloc/changepassword_bloc.dart';
+
 import 'package:tourbiene/bloc/googlebloc/authentication_bloc.dart';
 import 'package:tourbiene/bloc/googlebloc/authentication_event.dart';
-import 'package:tourbiene/bloc/resetPassword_bloc/resetpassword_bloc.dart';
+
 import 'package:tourbiene/bloc/signinbloc/login_bloc.dart';
 import 'package:tourbiene/bloc/signinbloc/login_event.dart';
 import 'package:tourbiene/screens/change_password.dart';
@@ -130,10 +131,10 @@ void btnResetClick({
   required GlobalKey<FormFieldState> passwordGlobalKey,
   required GlobalKey<FormState> globalKey,
 }) {
-  ResetPasswordBloc resetPasswordBloc = Provider.of<ResetPasswordBloc>(context,listen: false);
+  ChangepasswordBloc changepasswordBloc = Provider.of<ChangepasswordBloc>(context,listen: false);
   if (globalKey.currentState!.validate() &&
       oldPasswordGlobalKey.currentState!.validate() && passwordGlobalKey.currentState!.validate()) {
-     resetPasswordBloc.add(ResetPassword(model: ResetPasswprdModel(old_password: oldPasswordController.text.trim(),password: passwordController.text.trim())) as ResetPasswordEvent );
+     changepasswordBloc.add(ChangePasswordSuccessfullyEvent(model:  ResetPasswprdModel(old_password: oldPasswordController.text.trim(),password: passwordController.text.trim()))  );
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("User Password Succesfully Reset")));
   }else{
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("User do not Reset Password")));

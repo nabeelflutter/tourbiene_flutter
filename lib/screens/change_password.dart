@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tourbiene/bloc/forgetpasswordbloc/reset_password_bloc.dart';
-import 'package:tourbiene/bloc/forgetpasswordbloc/reset_password_staste.dart';
-import 'package:tourbiene/bloc/resetPassword_bloc/resetpassword_bloc.dart';
+import 'package:tourbiene/bloc/ChangePasswordBloc/changepassword_bloc.dart';
+
 import 'package:tourbiene/controller/signin_controller.dart';
 import 'package:tourbiene/main.dart';
 import 'package:tourbiene/widgets/dialog.dart';
@@ -209,15 +208,15 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
     Widget build(BuildContext context) {
       return Stack(children: [
         ChangePasswordPage(passwordController: passwordController, passwordGlobalKey: passwordGlobalKey, globalKey: globalKey, oldPasswordController: oldPasswordController, oldPasswordGlobalKey: oldPasswordGlobalKey),
-         BlocBuilder<ResetPasswordBloc, ResetPasswordState>(
+         BlocBuilder<ChangepasswordBloc, ChangepasswordState>(
               builder: (context, state) {
-                if (state is ResetpasswordInitial) {
+                if (state is ChangepasswordInitial) {
                   return const SizedBox();
-                } else if (state is ResetPasswordLoadingState) {
+                } else if (state is ChangePasswordLoadingState) {
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state is ResetPasswordLoadedState) {
+                } else if (state is ChangePasswordLoadedState) {
                   SchedulerBinding.instance
                       .addPostFrameCallback((Duration dur) {
                     Navigator.pushReplacementNamed(
@@ -225,7 +224,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                         arguments: null);
                   });
                   return const SizedBox();
-                } else if (state is ResetPasswordFailedState) {
+                } else if (state is ChangePasswordErrorState) {
                   SchedulerBinding.instance
                       .addPostFrameCallback((Duration dur) {
                     showDialog(
