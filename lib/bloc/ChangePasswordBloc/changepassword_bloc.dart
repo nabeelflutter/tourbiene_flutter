@@ -15,6 +15,7 @@ class ChangepasswordBloc extends Bloc<ChangepasswordEvent, ChangepasswordState> 
       emit.call(ChangePasswordLoadingState());
       try{
             await apiService.forgetPassword(event.model);
+            print("%%%%%%%%%%%%%%%%%%%%%%%");
             emit.call(ChangePasswordLoadedState());
       }catch (e) {
        emit.call(ChangePasswordErrorState(e.toString()));

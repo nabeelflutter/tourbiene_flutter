@@ -1,3 +1,9 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:flutter/material.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:tourbiene/main.dart';
+
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 
@@ -17,6 +23,21 @@
 //   User? myUser = user.user;
 //   return myUser;
 // }
+  facebookLogin(BuildContext context) async {
+    try {
+      final result =
+      await FacebookAuth.i.login(permissions: ['public_profile', 'email']);
+      if (result.status == LoginStatus.success) {
+        final userData = await FacebookAuth.i.getUserData();
+        
+        
+        Navigator.push(context, MaterialPageRoute(builder: (context) => MyAppDrawer(image: userData['picture']['data']['url'],
+          name: userData['name'], email: userData['email'])));
+      }
+    } catch (error) {
+      print(error);
+    }
+  }
 
 // // ImagePicker imagePicker = ImagePicker();
 // // File? image;

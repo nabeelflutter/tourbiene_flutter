@@ -3,41 +3,29 @@
 import 'dart:convert';
 
 class ResetPasswprdModel {
-  String? _old_password;
-  String? _password;
+   String? old_password;
+  String? password;
+ 
   ResetPasswprdModel({
-    String? old_password,
-    String? password,
-  }) {
-    _old_password = old_password;
-    _password = password;
-  }
+    this.old_password,
+    this.password,
+  
+  });
 
-  ResetPasswprdModel.fromJson(dynamic json) {
-    _old_password = json['old_password'];
-    _password = json['password'];
-  }
+  factory ResetPasswprdModel.fromJson(String str) =>
+      ResetPasswprdModel.fromMap(json.decode(str));
 
-  ResetPasswprdModel copyWith({
-    String? old_password,
-    String? password,
-  }) =>
-      ResetPasswprdModel(
-        old_password: old_password ?? _old_password,
-        password: password ?? _password,
+  //String toJson() => json.encode(toMap());
+
+  factory ResetPasswprdModel.fromMap(Map<String, dynamic> json) => ResetPasswprdModel(
+        old_password: json["old_password"],
+        password: json["password"],
+    
       );
-  String? get old_password => _old_password;
-  String? get password => _password;
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['old_password'] = _old_password;
-    map['password'] = _password;
-    return map;
-  }
+  Map<String, dynamic> toMap() => {
+        "old_password": old_password,
+        "password": password,
+       
+      };
 }
-
-ResetPasswprdModel signInUserModelFromJson(String str) =>
-    ResetPasswprdModel.fromJson(json.decode(str));
-String signInUserModelToJson(ResetPasswprdModel data) =>
-    json.encode(data.toJson());

@@ -62,7 +62,7 @@ class ApiService {
   //forgetPassword
    Future<Map<String, dynamic>> forgetPassword(ResetPasswprdModel model) async {
     Response response = await post(
-      Uri.parse("http://127.0.0.1:8000/user/password/"),
+      Uri.parse("http://127.0.0.1:8000/user/password"),
       body: jsonEncode(
         {'old_password': model.old_password!, 'password': model.password!},
       ),
@@ -70,7 +70,7 @@ class ApiService {
         "content-type": 'application/json'
       },
     );
-    Map<String, dynamic> data = jsonDecode(response.body);
+    Map<String, dynamic> data = jsonDecode(response.body.toString());
     print("#######################");
     print(response.body);
     

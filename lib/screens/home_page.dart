@@ -17,14 +17,14 @@ import 'package:tourbiene/screens/selling.dart';
 
 
 class HomePage extends StatelessWidget {
-  Map? userDara = {};
-  bool? isLogIn = false;
-  HomePage({super.key, this.userDara, this.isLogIn});
+  
+  HomePage({super.key, });
 
   static const String pageName = 'HomePage';
 
   @override
   Widget build(BuildContext context) {
+    
     //  List<Modal> postList = [];
 
     // ignore: unused_local_variable

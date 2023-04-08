@@ -84,7 +84,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 width: width,
                 child: TextFormField(
                   obscuringCharacter: '*',
-                 
+                 obscureText: _obscured,
                   key: widget.oldPasswordGlobalKey,
                   validator: isValidOldPassword,
                   onChanged: (value) {
@@ -93,6 +93,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   controller: widget.oldPasswordController,
                   style: const TextStyle(color: Colors.black),
                   decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.https_outlined),
                     suffixIcon: GestureDetector(
                       onTap: _textObscured,
                       child: Icon(

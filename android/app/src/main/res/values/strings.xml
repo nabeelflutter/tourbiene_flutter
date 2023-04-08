@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facebook_app_id">760676395581453</string>
+    <string name="fb_login_protocol_scheme">fb760676395581453</string>
+    <string name="facebook_client_token">eb02abb8dfd08e585660fe4634f238ee</string>
+    <string name="app_name">Tourbiene</string>
+</resources>

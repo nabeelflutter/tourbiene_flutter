@@ -55,12 +55,12 @@ class MyApp extends StatelessWidget {
 }
 
 class MyAppDrawer extends StatelessWidget {
-  Map? userDara = {};
-  bool? isLogIn = false;
-  dynamic widget;
+   final image;
+  final name;
+  final email;
   static const String pageName = 'MyAppDrawer';
 
-  MyAppDrawer({super.key, this.userDara, this.isLogIn, this.widget});
+  MyAppDrawer({super.key, this.image, this.email, this.name});
 
   // This widget is the root of your application.
   @override
@@ -97,8 +97,7 @@ class MyAppDrawer extends StatelessWidget {
     );
     return Scaffold(
       body: AppDrawer(
-        userDara: userDara,
-        isLogIn: isLogIn,
+        
         child: Home(
           appBar: appBar,
         ),

@@ -126,7 +126,8 @@ class SignInButtonPage extends StatelessWidget {
                     flex: 10,
                   ),
                 ],
-              )),
+              )
+              ),
           SizedBox(
             height: height * .03,
             width: width,
@@ -137,13 +138,32 @@ class SignInButtonPage extends StatelessWidget {
             btnClick: creatanaccountClick,
             color: Colors.white,
             border: Border.all(color: const Color.fromARGB(255, 1, 6, 15)),
-            child: const Center(
-              child: Text('Create an account',
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 32, 112, 250),
-                      fontSize: 17,
-                      fontWeight: FontWeight.w400)),
-            ),
+            child: Row(
+                children: const [
+                  Spacer(
+                    flex: 10,
+                  ),
+                  Expanded(
+                      flex: 10,
+                      child: Icon(
+                        FontAwesomeIcons.facebook,
+                        color: Colors.blue,
+                      )),
+                  Expanded(
+                    flex: 70,
+                    child: Center(
+                      child: Text('Sign in with Facebook',
+                          style: TextStyle(
+                             color: Color.fromARGB(255, 32, 112, 250),
+                              fontSize: 17, fontWeight: FontWeight.w400)),
+                    ),
+                  ),
+                  Spacer(
+                    flex: 10,
+                  ),
+                ],
+              )
+           
           ),
           SizedBox(
             height: height * .03,

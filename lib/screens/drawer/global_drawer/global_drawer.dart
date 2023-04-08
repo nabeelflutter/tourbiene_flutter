@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
@@ -157,6 +157,7 @@ class _GlobalDrawerState extends State<GlobalDrawer> {
             ListTile(
               onTap: () {
                // signout();
+                FacebookAuth.i.logOut();
                 Navigator.pushNamed(context, GoogleSignInPage.pageName);
               },
               leading: const Icon(Icons.logout),

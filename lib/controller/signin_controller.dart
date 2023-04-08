@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tourbiene/Modals/login_modal.dart';
 import 'package:tourbiene/Modals/reset_password_model.dart';
+import 'package:tourbiene/authentication/authentioncation_page.dart';
 import 'package:tourbiene/bloc/ChangePasswordBloc/changepassword_bloc.dart';
 
 import 'package:tourbiene/bloc/googlebloc/authentication_bloc.dart';
@@ -162,7 +163,7 @@ void forgotPasswordClick(BuildContext context) {
 }
 
 void creatanaccountClick(BuildContext context) {
-  Navigator.pushNamed(context, GoogleRegisterPage.pageName);
+  facebookLogin(context);
 }
 
 void emailanpasswordClick(BuildContext context) {
