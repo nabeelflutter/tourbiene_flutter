@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -13,6 +14,7 @@ import 'package:tourbiene/screens/drawer/notification_page.dart';
 import 'package:tourbiene/screens/drawer/purchase_page.dart';
 import 'package:tourbiene/screens/drawer/setting_page.dart';
 import 'package:tourbiene/screens/drawer/watching/watching.dart';
+import 'package:tourbiene/screens/googlescreens/google_screen.dart';
 
 import 'package:tourbiene/screens/saveedscreen/saved.dart';
 import 'package:tourbiene/screens/selling.dart';
@@ -284,8 +286,9 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 ),
                 ListTile(
                   onTap: () {
-                    // FirebaseAuth.instance.signOut();
-                    // Navigator.pushNamed(context, GoogleSignInPage.pageName);
+         _signOut();
+             Navigator.pushNamedAndRemoveUntil(context, GoogleSignInPage.pageName, (route) => false);
+         
                   },
                   leading: const Icon(Icons.logout),
                   title: const Text('Logout'),
@@ -297,4 +300,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
       ),
     );
   }
+    Future<void> _signOut() async {
+  await FirebaseAuth.instance.signOut();
+}
 }

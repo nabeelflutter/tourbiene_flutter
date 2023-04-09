@@ -139,3 +139,6 @@ class AppNavigation {
     }
   }
 }
+class Pages{
+  static const String SIGNINPAGE = 'SIGNINPAGE';
+}
