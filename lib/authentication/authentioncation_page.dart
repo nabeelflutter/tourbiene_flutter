@@ -13,7 +13,7 @@ FirebaseAuth auth = FirebaseAuth.instance;
 
 Future<User?> signInWithGoogle() async {
   final GoogleSignInAccount? googleUser =
-      await GoogleSignIn(scopes: <String>['Email']).signIn();
+      await GoogleSignIn().signIn();
   final GoogleSignInAuthentication googleAuth =
       await googleUser!.authentication;
   final credential = GoogleAuthProvider.credential(

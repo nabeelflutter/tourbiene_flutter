@@ -40,7 +40,7 @@ class GoogleSignInPage extends StatelessWidget {
                   SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text(state.message.toString()),
+                        content: Text(state.message.toString()),  
                       ),
                     );
                   });

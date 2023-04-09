@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "862794435059",
-    "project_id": "tourbiene-flutter-project",
-    "storage_bucket": "tourbiene-flutter-project.appspot.com"
+    "project_number": "159132083053",
+    "project_id": "crpro-2bd35",
+    "storage_bucket": "crpro-2bd35.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:862794435059:android:cce776d241b643f6b6aa86",
+        "mobilesdk_app_id": "1:159132083053:android:37b08946c57920f7797064",
         "android_client_info": {
-          "package_name": "com.example.stripe"
+          "package_name": "com.example.tourbiene"
         }
       },
       "oauth_client": [
         {
-          "client_id": "862794435059-9nvqkel1afnefacgfukfhb4aee9uhsac.apps.googleusercontent.com",
+          "client_id": "159132083053-grevuf5ppa0lqoi5mnu4tatnu0u6hdtl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.stripe",
+            "package_name": "com.example.tourbiene",
             "certificate_hash": "2d69139d99e0f74275efad6a6fab8a9bce900a7b"
           }
         },
         {
-          "client_id": "862794435059-miv21hlghofepjpgab4muohb1m7612dm.apps.googleusercontent.com",
+          "client_id": "159132083053-v0m0j6ucjfpcjkfqdml4mtdudi8rglcl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDi6OFQghpgFHiUBKxUjJHnb0Qv49nnxHY"
+          "current_key": "AIzaSyAzkrw1Qq9DvZaa7f_LXLNz4SEJb7rzriA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "862794435059-miv21hlghofepjpgab4muohb1m7612dm.apps.googleusercontent.com",
+              "client_id": "159132083053-v0m0j6ucjfpcjkfqdml4mtdudi8rglcl.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
