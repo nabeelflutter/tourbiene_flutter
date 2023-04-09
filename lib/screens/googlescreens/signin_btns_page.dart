@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_final_fields
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tourbiene/controller/signin_controller.dart';
@@ -95,7 +96,7 @@ class SignInButtonPage extends StatelessWidget {
                 ],
               )),
           SizedBox(
-            height: height * .03,
+            height: height * .02,
             width: width,
           ),
           GoogleBtn(
@@ -129,7 +130,7 @@ class SignInButtonPage extends StatelessWidget {
               )
               ),
           SizedBox(
-            height: height * .03,
+            height: height * .02,
             width: width,
           ),
           GoogleBtn(
@@ -155,6 +156,43 @@ class SignInButtonPage extends StatelessWidget {
                       child: Text('Sign in with Facebook',
                           style: TextStyle(
                              color: Color.fromARGB(255, 32, 112, 250),
+                              fontSize: 17, fontWeight: FontWeight.w400)),
+                    ),
+                  ),
+                  Spacer(
+                    flex: 10,
+                  ),
+                ],
+              )
+           
+          ),
+           SizedBox(
+            height: height * .02,
+            width: width,
+          ),
+           GoogleBtn(
+            height: height * .07,
+            width: width,
+            btnClick: instagramAccount,
+            color: Colors.white,
+            border: Border.all(color: const Color.fromARGB(255, 1, 6, 15)),
+            child: Row(
+                children: const [
+                  Spacer(
+                    flex: 10,
+                  ),
+                  Expanded(
+                      flex: 10,
+                      child: Icon(
+                        FontAwesomeIcons.instagram,
+                        color: Colors.red,
+                      )),
+                  Expanded(
+                    flex: 70,
+                    child: Center(
+                      child: Text('Sign in with Instagram',
+                          style: TextStyle(
+                             color: Color.fromARGB(255, 1, 4, 10),
                               fontSize: 17, fontWeight: FontWeight.w400)),
                     ),
                   ),

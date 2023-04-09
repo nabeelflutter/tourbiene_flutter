@@ -1,5 +1,7 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tourbiene/bloc/ChangePasswordBloc/changepassword_bloc.dart';
@@ -14,8 +16,8 @@ import 'package:tourbiene/screens/animateddrawer/home_drawer.dart';
 import 'package:tourbiene/screens/googlescreens/google_screen.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   // final FirebaseAuth auth = FirebaseAuth.instance;
+   final FirebaseAuth auth = FirebaseAuth.instance;
     return MultiBlocProvider(
       providers: [
         BlocProvider<ConnectivityBloc>(
@@ -46,10 +48,9 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.purple,
           ),
           home:
-          //  auth.currentUser != null
-          //     ? MyAppDrawer()
-          //     : 
-              const GoogleSignInPage()),
+           auth.currentUser != null
+              ? const MyAppDrawer()
+              :  const GoogleSignInPage()),
     );
   }
 }
@@ -60,7 +61,7 @@ class MyAppDrawer extends StatelessWidget {
   final email;
   static const String pageName = 'MyAppDrawer';
 
-  MyAppDrawer({super.key, this.image, this.email, this.name});
+  const MyAppDrawer({super.key, this.image, this.email, this.name});
 
   // This widget is the root of your application.
   @override

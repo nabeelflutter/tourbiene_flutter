@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: unused_import
-import 'package:html/parser.dart';
+
 import 'package:tourbiene/screens/drawer/global_drawer/global_drawer.dart';
 import 'package:tourbiene/screens/drawer/search_page.dart';
 import 'package:tourbiene/screens/explore_popular_categories/korean_beauty/korean_beauty_heropage.dart';

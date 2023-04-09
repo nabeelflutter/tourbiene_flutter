@@ -18,7 +18,7 @@ import 'package:tourbiene/screens/selling.dart';
 
 class HomePage extends StatelessWidget {
   
-  HomePage({super.key, });
+  const HomePage({super.key, });
 
   static const String pageName = 'HomePage';
 

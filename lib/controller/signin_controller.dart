@@ -15,6 +15,7 @@ import 'package:tourbiene/screens/googlescreens/forgetpasswordscreens/reset_pass
 import 'package:tourbiene/screens/googlescreens/google_register_page.dart';
 
 import 'package:tourbiene/screens/signupscreens/signup_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 String? isValidEmail(String? email) {
   /*
@@ -164,6 +165,9 @@ void forgotPasswordClick(BuildContext context) {
 
 void creatanaccountClick(BuildContext context) {
   facebookLogin(context);
+}
+void instagramAccount(BuildContext context) {
+  launch("https://www.instagram.com/");
 }
 
 void emailanpasswordClick(BuildContext context) {
