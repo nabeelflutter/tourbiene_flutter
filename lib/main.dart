@@ -56,12 +56,13 @@ class MyApp extends StatelessWidget {
 }
 
 class MyAppDrawer extends StatelessWidget {
-   final image;
-  final name;
-  final email;
+  const MyAppDrawer({super.key, this.image, this.email, this.name});
+
   static const String pageName = 'MyAppDrawer';
 
-  const MyAppDrawer({super.key, this.image, this.email, this.name});
+  final email;
+   final image;
+  final name;
 
   // This widget is the root of your application.
   @override
